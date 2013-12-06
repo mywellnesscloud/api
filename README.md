@@ -1,0 +1,4 @@
+api
+===
+
+mywellnesscloud public apis
