@@ -1,14 +1,11 @@
 function setFullHeight() {
-	var windowHeight = $(window).height() + "px";
-	$(".navigation").css("height", windowHeight);
-	$(".desc-area").css("height", windowHeight);
-	$(".code-area").css("height", windowHeight);
+	if ($('.column').height() < $(document).height()){
+		$('.column').css('height', $(document).height()+'px');
+	}	
 }
 
 $(function() {
 
 	setFullHeight();
-
 	$('.collapse').collapse();
-
 });

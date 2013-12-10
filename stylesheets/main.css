@@ -1,27 +1,42 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
 html {
   font-size: 90%; }
-  html body .wrapper {
-    height: 100%;
-    padding: 0 15px;
-    font-family: 'Open Sans', sans-serif; }
-    html body .wrapper .navigation {
-      background: #cfcfcf;
-      color: black;
-      overflow: hidden; }
-      html body .wrapper .navigation .fix {
-        position: fixed; }
-        html body .wrapper .navigation .fix a {
-          color: black; }
-        html body .wrapper .navigation .fix .logo {
-          margin-top: 15px;
-          width: 150px;
-          height: auto; }
-        html body .wrapper .navigation .fix #api {
-          margin-top: 60px; }
-          html body .wrapper .navigation .fix #api a {
-            font-weight: 400; }
-        html body .wrapper .navigation .fix #resources {
-          margin-top: 20px; }
-    html body .wrapper .code-area {
-      background: #41535d; }
+  html body {
+    background: #1a1a1a; }
+    html body .wrapper {
+      height: 100%;
+      padding: 0 15px;
+      font-family: 'Open Sans', sans-serif; }
+      html body .wrapper .navigation {
+        background: #d9d9d9;
+        color: #1a1a1a;
+        overflow: hidden; }
+        html body .wrapper .navigation .fix {
+          position: fixed; }
+          html body .wrapper .navigation .fix a {
+            color: #1a1a1a; }
+          html body .wrapper .navigation .fix .logo {
+            margin-top: 15px;
+            width: 150px;
+            height: auto; }
+          html body .wrapper .navigation .fix #api {
+            margin-top: 60px; }
+            html body .wrapper .navigation .fix #api a {
+              font-weight: 400; }
+          html body .wrapper .navigation .fix #resources {
+            margin-top: 20px; }
+      html body .wrapper .content .line .desc-area {
+        background: white; }
+        html body .wrapper .content .line .desc-area h4 {
+          margin-top: 80px; }
+      html body .wrapper .content .line .code-area {
+        margin-top: 80px;
+        color: #d9d9d9; }
+        html body .wrapper .content .line .code-area pre {
+          background: none;
+          border: none;
+          color: white;
+          margin: 30px 0 30px -190px;
+          padding: 0;
+          clear: both;
+          float: none; }

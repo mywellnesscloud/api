@@ -3,15 +3,17 @@
 $white: #FFFFFF;
 $yellow: #FFF797;
 $logogray: #41535D;
-$standgray: #CFCFCF;
-$litegray: #DBD9D8;
-$darkgray: #58595B;
-$black: #000000;
+
+$lite: #D9D9D9;
+$base: #687B8A;
+$dark: #223241;
+$black: #1A1A1A;
 
 html {
 	font-size:90%;
 
 	body {
+		background: $black;
 
 		.wrapper {
 			height:100%;
@@ -19,13 +21,12 @@ html {
 			font-family: 'Open Sans', sans-serif;
 
 			.navigation {
-				background: $standgray;
+				background: $lite;
 				color: $black;
 				overflow: hidden;
 
 				.fix {
 					position: fixed;
-
 
 					a {
 						color: $black;
@@ -51,12 +52,35 @@ html {
 				}
 			}
 
-			.desc-area {
+			.content {
+				
+				.line {
+					
+					.desc-area {
+						background: $white;
+					
+						h4 {
+							margin-top: 80px;
+						}
+					}
 
-			}
+					.code-area {
+						margin-top: 80px;
+						color: $lite;
 
-			.code-area {
-				background: $logogray;
+						pre {
+							background: none;
+							border: none;
+							color: $white;
+							margin: 30px 0 30px -190px;
+							padding: 0;
+							clear: both;
+							float: none;
+						}
+					}
+				}
+
+				
 			}
 		}
 	}

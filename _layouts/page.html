@@ -10,8 +10,8 @@
 	<title>mywellness cloud API</title>
 
 	<!-- Bootstrap core CSS -->
-	<link href="../api/bootstrap/css/bootstrap.css" rel="stylesheet">
-	<link href="../api/stylesheets/main.css" rel="stylesheet">
+	<link href="./bootstrap/css/bootstrap.css" rel="stylesheet">
+	<link href="./stylesheets/main.css" rel="stylesheet">
 
 	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!--[if lt IE 9]>
@@ -23,11 +23,11 @@
 		<body>
 			<div class="wrapper">
 				<div class="row">
-					<div class="navigation col-md-2">
+					<div class="navigation col-md-2 column">
 						<div class="fix">
 							<div class="row">
 								<div class="col-md-12">
-									<img class="logo" src="../api/images/api_logo.png" />
+									<img class="logo" src="./images/api_logo.png" />
 								</div>
 							</div>
 
@@ -47,7 +47,6 @@
 							<div class="row">
 								<div id="resources" class="col-md-10 col-md-offset-1">
 									<h4>RESOURCES</h4>
-
 									<div id="accordion">
 										<div>
 											<a data-toggle="collapse" data-parent="#accordion" href="#authentication">
@@ -80,12 +79,14 @@
 						</div>
 					</div>
 
-					{{ content }}
+					<div class="content col-md-10 column">
+						{{ content }}
+					</div>
 
 				</div>
 			</div>
 			<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-			<script type="text/javascript" src="../api/bootstrap/js/bootstrap.min.js"></script>
-			<script type="text/javascript" src="../api/javascripts/main.js"></script>
+			<script type="text/javascript" src="./bootstrap/js/bootstrap.min.js"></script>
+			<script type="text/javascript" src="./javascripts/main.js"></script>
 		</body>
 		</html>
