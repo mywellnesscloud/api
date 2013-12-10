@@ -34,13 +34,13 @@ html {
         padding-bottom: 20px; }
         html body .wrapper .content .line .desc-area h4 {
           margin-top: 80px; }
-      html body .wrapper .content .line .code-area {
-        margin-top: 80px;
-        color: #d9d9d9; }
-        html body .wrapper .content .line .code-area pre {
+        html body .wrapper .content .line .desc-area small {
+          display: block;
+          margin-bottom: 20px; }
+        html body .wrapper .content .line .desc-area pre, html body .wrapper .content .line .desc-area code {
           background: none;
           border: none;
-          color: white;
+          color: #1a1a1a;
           margin: 30px 0 30px -190px;
           padding: 0;
           clear: both;

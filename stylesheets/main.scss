@@ -71,25 +71,23 @@ html {
 						h4 {
 							margin-top: 80px;
 						}
-					}
 
-					.code-area {
-						margin-top: 80px;
-						color: $lite;
+						small {
+							display: block;
+							margin-bottom: 20px;
+						}
 
-						pre {
+						pre, code {
 							background: none;
 							border: none;
-							color: $white;
+							color: $black;
 							margin: 30px 0 30px -190px;
 							padding: 0;
 							clear: both;
 							float: none;
 						}
 					}
-				}
-
-				
+				}				
 			}
 		}
 	}
