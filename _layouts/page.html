@@ -30,53 +30,10 @@
 									<img class="logo" src="./images/api_logo.png" />
 								</div>
 							</div>
+							
+							{% include summary.html %}
 
-							<div class="row">
-								<div id="api" class="col-md-10 col-md-offset-1">
-									<h4>API</h4>
-									<ul class="list-unstyled">
-										<li><a href="#summary">Summary</a></li>
-										<li><a href="#access">Access</a></li>
-										<li><a href="#rate-limiting">Rate Limiting</a></li>
-										<li><a href="#conventions">Conventions</a></li>
-										<li><a href="#support">Support</a></li>
-									</ul>
-								</div>
-							</div>
-
-							<div class="row">
-								<div id="resources" class="col-md-10 col-md-offset-1">
-									<h4>RESOURCES</h4>
-									<div id="accordion">
-										<div>
-											<a data-toggle="collapse" data-parent="#accordion" href="#authentication">
-												Authentication
-											</a>
-											<div id="authentication" class="collapse in">
-												<ul class="list-unstyled">
-													<li><a href="#request-list">Request access</a></li>
-													<li><a href="#token-exchange">Token exchange</a></li>
-													<li><a href="#deauthorization">Deauthorization</a></li>
-												</ul>
-											</div>
-										</div>
-										<div>
-											<a data-toggle="collapse" data-parent="#accordion" href="#clubs">
-												Clubs
-											</a>
-											<div id="clubs" class="collapse in">
-												<ul class="list-unstyled">
-													<li><a href="#retrieve-a-club">Retrieve a club</a></li>
-													<li><a href="#list-athlete-clubs">List athlete clubs</a></li>
-													<li><a href="#list-club-members">List club members</a></li>
-													<li><a href="#list-club-activities">List club activities</a></li>
-												</ul>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
+							{% include dynamicmenu.html %}
 					</div>
 
 					<div class="content col-md-10 column">
