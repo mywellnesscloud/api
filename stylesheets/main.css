@@ -1,0 +1,27 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
+html {
+  font-size: 90%; }
+  html body .wrapper {
+    height: 100%;
+    padding: 0 15px;
+    font-family: 'Open Sans', sans-serif; }
+    html body .wrapper .navigation {
+      background: #cfcfcf;
+      color: black;
+      overflow: hidden; }
+      html body .wrapper .navigation .fix {
+        position: fixed; }
+        html body .wrapper .navigation .fix a {
+          color: black; }
+        html body .wrapper .navigation .fix .logo {
+          margin-top: 15px;
+          width: 150px;
+          height: auto; }
+        html body .wrapper .navigation .fix #api {
+          margin-top: 60px; }
+          html body .wrapper .navigation .fix #api a {
+            font-weight: 400; }
+        html body .wrapper .navigation .fix #resources {
+          margin-top: 20px; }
+    html body .wrapper .code-area {
+      background: #41535d; }

@@ -1,0 +1,63 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
+
+$white: #FFFFFF;
+$yellow: #FFF797;
+$logogray: #41535D;
+$standgray: #CFCFCF;
+$litegray: #DBD9D8;
+$darkgray: #58595B;
+$black: #000000;
+
+html {
+	font-size:90%;
+
+	body {
+
+		.wrapper {
+			height:100%;
+			padding:0 15px;
+			font-family: 'Open Sans', sans-serif;
+
+			.navigation {
+				background: $standgray;
+				color: $black;
+				overflow: hidden;
+
+				.fix {
+					position: fixed;
+
+
+					a {
+						color: $black;
+					}
+
+					.logo {
+						margin-top:15px;
+						width:150px;
+						height:auto;
+					}
+
+					#api {
+						margin-top:60px;
+
+						a {
+							font-weight: 400;
+						}
+					}
+
+					#resources {
+						margin-top:20px;
+					}
+				}
+			}
+
+			.desc-area {
+
+			}
+
+			.code-area {
+				background: $logogray;
+			}
+		}
+	}
+}
