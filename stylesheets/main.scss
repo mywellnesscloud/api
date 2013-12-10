@@ -9,11 +9,14 @@ $base: #687B8A;
 $dark: #223241;
 $black: #1A1A1A;
 
+$break-small: 768px;
+$break-large: 992px;
+
 html {
 	font-size:90%;
 
 	body {
-		background: $black;
+		background: $white;
 
 		.wrapper {
 			height:100%;
@@ -21,19 +24,24 @@ html {
 			font-family: 'Open Sans', sans-serif;
 
 			.navigation {
-				background: $lite;
-				color: $black;
+				background: $logogray;
+				color: $white;
 				overflow: hidden;
 
 				.fix {
-					position: fixed;
+					@media screen and (max-width: $break-small) {
+						position: relative;
+					}
+					@media screen and (min-width: $break-large) {
+						position: fixed;
+					}
 
 					a {
-						color: $black;
+						color: $white;
 					}
 
 					h4 {
-						text-shadow:1px 1px 0 $white;
+						text-shadow:1px 1px 0 $black;
 					}
 
 					.logo {

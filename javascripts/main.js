@@ -1,8 +1,10 @@
 function setFullHeight() {
-	var docHeight = $(document).height();
-	if ($('.column').height() < docHeight){
-		$('.column').css('height', docHeight +'px');
-	}	
+	if($(window).width() > 768) {
+		var docHeight = $(document).height();
+		if ($('.column').height() < docHeight){
+			$('.column').css('height', docHeight +'px');
+		}	
+	}
 }
 
 function equalizeHeight() {
@@ -18,7 +20,11 @@ function equalizeHeight() {
 
 
 $(function() {
+
 	$('.collapse').collapse();
+
 	equalizeHeight();
+
 	setFullHeight();
+	
 });
