@@ -32,6 +32,10 @@ html {
 						color: $black;
 					}
 
+					h4 {
+						text-shadow:1px 1px 0 $white;
+					}
+
 					.logo {
 						margin-top:15px;
 						width:150px;
@@ -39,7 +43,7 @@ html {
 					}
 
 					#api {
-						margin-top:60px;
+						margin-top:40px;
 
 						a {
 							font-weight: 400;
@@ -48,6 +52,10 @@ html {
 
 					#resources {
 						margin-top:20px;
+
+						ul {
+							margin: 0 0 0 10px;
+						}
 					}
 				}
 			}
@@ -59,7 +67,7 @@ html {
 					.desc-area {
 						background: $white;
 						padding-bottom: 20px;
-					
+
 						h4 {
 							margin-top: 80px;
 						}
