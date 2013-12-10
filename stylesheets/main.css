@@ -26,7 +26,8 @@ html {
           html body .wrapper .navigation .fix #resources {
             margin-top: 20px; }
       html body .wrapper .content .line .desc-area {
-        background: white; }
+        background: white;
+        padding-bottom: 20px; }
         html body .wrapper .content .line .desc-area h4 {
           margin-top: 80px; }
       html body .wrapper .content .line .code-area {
