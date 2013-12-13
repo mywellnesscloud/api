@@ -1,0 +1,26 @@
+			
+			<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+			<script type="text/javascript" src="./bootstrap/js/bootstrap.min.js"></script>
+			<script type="text/javascript" src="./javascripts/jquery.rotate.js"></script>
+			<script type="text/javascript" src="./javascripts/main.js"></script>
+
+			<script type="text/javascript">
+			$( document ).ready( function() {
+			  var angle_1 = 0;
+			  var angle_2 = 0;
+			  var angle_3 = 0;
+			  var angle_4 = 0;
+			  setInterval(function(){
+			    angle_1 += 1;
+			    angle_2 += 5;
+			    angle_3 += -2;
+			    angle_4 += -1;
+			    $("#gear_1").rotate(angle_1);
+			    $("#gear_2").rotate(angle_2);
+			    $("#gear_3").rotate(angle_3);
+			    $("#gear_4").rotate(angle_4);
+			  },50);
+			});
+			</script>
+		</body>
+		</html>
