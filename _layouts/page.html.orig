@@ -1,0 +1,58 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<title>mywellness cloud API</title>
+
+	<!-- Bootstrap core CSS -->
+	<link href="{{site.data.config.root}}bootstrap/css/bootstrap.css" rel="stylesheet">
+	<link href="{{site.data.config.root}}stylesheets/main.css" rel="stylesheet">
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+			<![endif]-->
+		</head>
+
+=======
+{% include header.html %}
+>>>>>>> 9c3b1b87d647af0f73c47a268d796974cbe169cb
+		<body>
+			<div class="wrapper">
+				<div class="row">
+					<div class="navigation col-md-2 column">
+						<div class="fix">
+							<div class="row">
+								<div class="col-md-12">
+									<img class="logo" src="{{site.data.config.root}}images/api_logo.png" />
+								</div>
+							</div>
+							
+							{% include summary.html %}
+
+							{% include dynamicmenu.html %}
+					</div>
+
+					<div class="content col-md-10 column">
+						{{ content }}
+					</div>
+
+				</div>
+<<<<<<< HEAD
+			</div>
+			<script type="text/javascript" src="{{site.data.config.root}}javascripts/jquery-1.10.2.min.js"></script>
+			<script type="text/javascript" src="{{site.data.config.root}}bootstrap/js/bootstrap.min.js"></script>
+			<script type="text/javascript" src="{{site.data.config.root}}javascripts/main.js"></script>
+		</body>
+		</html>
+=======
+</div>
+{% include footer.html %}
+>>>>>>> 9c3b1b87d647af0f73c47a268d796974cbe169cb
