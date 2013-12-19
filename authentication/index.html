@@ -1,0 +1,205 @@
+---
+layout: page
+title: Authentication
+---
+
+<div class="row line">
+	<div class="desc-area col-md-10">
+		<h2 id="authentication">
+			Authentication
+		</h2>
+		<p class="desc">
+		Mywellness cloud uses OAuth2 as an authentication protocol. It allows external applications to request authorization to a user’s private. It allows users to grant and revoke API access on a per-application basis and keeps users’ authentication details safe.All developers need to register their application before getting started.<br/>
+		A registered application will be assigned a Client ID and Client SECRET. The SECRET should never be shared				
+		</p>
+	</div>
+</div>
+<div class="row line">
+	<div class="desc-area col-md-10">
+		<h3 id="webflow">
+			Application Registration
+		</h3>
+		<p class="desc">
+		Mywellness cloud API access is regulated by <a href="#tlc">term and condition</a> that must be accepted before having apis access.
+		Registration request must done by sending an email to <a href='mailto:api@mywellness.com'>api@mywellness.com</a> describing the scope and purpouse of the application.
+		Requestor will be contacted directly by mywellness cloud team which will register the application and provide client identification and secret.
+		</p>
+	</div>
+</div>
+<div class="row line">
+	<div class="desc-area col-md-10">
+		<h3 id="webflow">
+			Web Application Flow
+		</h3>
+		<p class="desc">
+		The process begins by redirecting a browser to a mywellness.com url (<a href='https://www.mywellness.com/oauth'>https://www.mywellness.com/oauth</a>) with a set of query parameters that indicate the type of mywellness cloud API access the application requires. Mywellness.com handles the user authentication and consent (read only). 
+		Request parameters as for oauth2 specification are:
+		</p>
+		<ul class="desc">
+			<li>client_id (mandatory)</li>
+			<li>redirect_uri (mandatory)</li>
+			<li>scope (mandatory) the only scope supported in version 1 is read</li>
+			<li>state</li>
+		</ul>
+		<p class="desc">If the user authorizes the application, mywellness.com will return an authorization code to the web server application. The application must still complete the process by exchanging the code for an access token. [TDB adding oauth authorization code sample image]
+		<br/><br/>
+		This is done by presenting a client_id and client_secret (obtained during application registration), along with the authorization code, to Strava. Upon success, an access token will be returned that can be used to access the API on behalf of the user.
+		</p>
+	</div>
+</div>
+
+<div class="row line">
+	<div class="desc-area col-md-10">
+		<h3 id="requestaccess">
+			Request access
+		</h3>
+		<p class="desc">
+	      To request access on behalf of a user, open a popup (800px, 400px as recommended size) redirecting the user to mywellness cloud's authorization page, https://www.mywellness.com/oauth. The page will prompt the user to authorize the app while providing basic information about what is being asked.
+		  <br/><br/>
+		  By default, the scope parameter  must be set to read and can access all user data in readonly mode.</p>
+		</p>
+		<div class="parameter">
+		<h4>
+			Parameters
+		</h4>
+		<table class="servicepar">
+			  <tbody>
+				<tr>
+				  <td>client_id:</td>
+				  <td>
+						<strong>string</strong> <em>required</em>  <br> application’s ID, obtained after application registration</td>
+				</tr>
+				<tr>
+				  <td>redirect_uri:</td>
+				  <td>
+						<strong>string</strong> <em>required</em>   <br> URL to which the user will be redirected with the authorization code, <strong>must be to the callback domain associated with the application, or its sub-domain,</strong></td>
+				</tr>
+				<tr>
+				  <td>response_type:</td>
+				  <td>
+					<strong>string</strong> <em>required</em><br> must be ‘code’</td>
+				</tr>
+				<tr>
+				  <td>scope:</td>
+				  <td>
+						<strong>string</strong> <em>mandatory</em><br>must be 'read'</td>
+				</tr>
+				<tr>
+				  <td>state:</td>
+				  <td>
+						<strong>string</strong> optional     <br> returned to your application, useful if the authentication is done from various points in an app</td>
+				</tr>
+			  </tbody>
+			</table>
+		</div>
+	</div>
+</div>
+
+
+
+<div class="row line">
+	<div class="desc-area col-md-10">
+		<h3 id="tokenexchange">
+			Token exchange
+		</h3>
+		<p class="desc">
+	      Mywellness cloud will respond to the authorization request by redirecting the user/browser to the redirect_uri.
+		  On success, a code will be included in the query string. If access is denied, error=access_denied will be included in the query string. In both cases, if provided, the state argument will also be included.
+		  <br/><br/>
+		  <b>Obtain user access token</b>
+		  <br/>
+		  <br/>
+		  If the user accepts the request to share access to their mywellness cloud data, Mywellness cloud will redirect back to redirect_uri with the authorization code.<br/>The application must now exchange the temporary authorization code (that expired in 10 minutes) for an access token, using its client ID and client secret.<br/>
+		The call must be performed at this address <a href="https://services.mywellness.com/OAuth/58FB87D2-B9C1-45D1-83CE-F92C64E787AF/GetAccessToken">https://services.mywellness.com/OAuth/58FB87D2-B9C1-45D1-83CE-F92C64E787AF/GetAccessToken</a> using application/json as content type and providing a json<br/> 
+		</p>
+		<div class="parameter">
+		<h4>
+			Parameters
+		</h4>
+		<table class="servicepar">
+		  <tbody>
+				<tr>
+				  <td>client_id:</td>
+				  <td>
+						<strong>string</strong> <em>required</em>  <br> application’s id</td>
+				</tr>
+				<tr>
+				  <td>client_secret:</td>
+				  <td>
+					<strong>string</strong> <em>required</em>   <br> application’s secret, obtained after application registration</td>
+				</tr>
+				<tr>
+				  <td>code:</td>
+				  <td>
+					<strong>string</strong> <em>required</em>   <br> authorization code obtained as </td>
+				</tr>
+				<tr>
+				  <td>grant_type:</td>
+				  <td>
+					<strong>string</strong> <em>required</em>   <br> authorization_code </td>
+				</tr>
+				</tbody>
+			</table>
+		 <pre>
+				{
+				  "client_id": "",
+				  "client_secret": "",
+				  "redirect_uri": "",
+				  "code": "",
+				  "grant_type": "authorization_code"
+				}
+		  </pre>
+		</div>
+		<div class="parameter">
+		<h4>
+			Response
+		</h4>
+		<table class="servicepar">
+		  <tbody>
+				<tr>
+				  <td>access_token:</td>
+				  <td>
+						<strong>string</strong> <em>required</em>  <br> user access token</td>
+				</tr>
+				<tr>
+				  <td>user_id:</td>
+				  <td>
+					<strong>string</strong> <em>required</em>   <br> user identification</td>
+				</tr>
+				<tr>
+				  <td>error_code:</td>
+				  <td>
+					<strong>string</strong>   <br>error provided in case of something got wrong  </td>
+				</tr>
+				</tbody>
+			</table>
+			
+		 <pre>
+				{
+				  "client_id": "",
+				  "client_secret": "",
+				  "redirect_uri": "",
+				  "code": "",
+				  "grant_type": "authorization_code"
+				}
+		  </pre>
+		</div>
+	</div>
+</div>
+
+
+<div class="row line">
+	<div class="desc-area col-md-10">
+		<h3 id="tokenexchange">
+			Access the API using an Access Token
+		</h3>
+		<p class="desc">
+			The application will now be able to make requests on the user’s behalf using the access_token query string parameter (GET) or POST body, or the Authorization header.
+			Applications should check for a 401 Unauthorized response. Access for those tokens has been revoked by the user.
+		</p>
+	</div>
+</div>
+
+<div class="row line">
+	<div class="desc-area col-md-10"></div>
+</div>

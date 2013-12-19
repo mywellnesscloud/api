@@ -1,1 +1,3 @@
 mainpage: summary
+root: /
+sections: ['Authentication','User','ActivityStream','Activity','TrainingProgram','WorkoutSession']
