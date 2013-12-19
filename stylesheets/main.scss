@@ -18,6 +18,93 @@ html {
 	body {
 		background: $white;
 
+		&.homepage {
+			background: $logogray !important;
+
+			h2, h4 {
+				color: $white;
+				text-shadow:1px 1px 0 $black;
+			}
+
+			.cloud_wrapper {
+				position: relative;
+				width:465px;
+				height:264px;
+				margin:86px auto 20px auto;
+				
+				.cloud_top {
+					position: absolute;
+					top:0px;
+					right:0px;
+					width:465px;
+					height:264px;
+					background: url('./../images/cloud.png') 0 0 no-repeat;
+					z-index: 99;
+				}
+
+				.cloud_middle {
+					position: absolute;
+					top:0px;
+					right:0px;
+					width:465px;
+					height:264px;
+					z-index: 2;
+					overflow: hidden;
+
+					#gear_1 {
+						position: absolute;
+						top:50px;
+						left:-40px;
+						width:255px;
+						height:255px;
+						background: url('http://cdn.mywellness.com/xchange/app_offline/img/gear_1.png') 0 0 no-repeat;
+						z-index: 3;
+					}
+
+					#gear_2 {
+						position: absolute;
+						top:180px;
+						left:170px;
+						width:121px;
+						height:121px;
+						background: url('http://cdn.mywellness.com/xchange/app_offline/img/gear_2.png') 0 0 no-repeat;
+						z-index: 4;
+					}
+
+					#gear_3 {
+						position: absolute;
+						top:90px;
+						left:230px;
+						width:232px;
+						height:232px;
+						background: url('http://cdn.mywellness.com/xchange/app_offline/img/gear_3.png') 0 0 no-repeat;
+						z-index: 3;
+					}
+
+					#gear_4 {
+						position: absolute;
+						top:-96px;
+						left:160px;
+						width:257px;
+						height:257px;
+						background: url('http://cdn.mywellness.com/xchange/app_offline/img/gear_4.png') 0 0 no-repeat;
+						z-index: 2;
+					}
+				}
+
+				.cloud_under {
+					position: absolute;
+					top:0px;
+					right:0px;
+					width:465px;
+					height:264px;
+					background: url('http://cdn.mywellness.com/xchange/app_offline/img/cloud_bg.png') 0 0 no-repeat;
+					z-index: 1;
+				}
+
+			}
+		}
+
 		.wrapper {
 			height:100%;
 			padding:0 15px;
