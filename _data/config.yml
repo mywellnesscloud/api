@@ -1,3 +1,4 @@
 mainpage: summary
 root: /api/
 sections: ['Authentication','User','ActivityStream','Activity','TrainingProgram','WorkoutSession']
+title: ora
