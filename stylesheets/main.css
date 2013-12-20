@@ -99,6 +99,12 @@ html {
           margin-top: 20px; }
           html body .wrapper .navigation .fix #resources ul {
             margin: 0 0 0 10px; }
+        html body .wrapper .navigation #accordion div {
+          padding: 5px 0; }
+          html body .wrapper .navigation #accordion div span {
+            float: right; }
+          html body .wrapper .navigation #accordion div div ul li {
+            padding: 5px; }
       html body .wrapper .content .line .desc-area {
         background: white;
         padding-bottom: 20px; }
@@ -115,4 +121,3 @@ html {
           padding: 0;
           clear: both;
           float: none; }
-

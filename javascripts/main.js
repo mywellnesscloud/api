@@ -19,6 +19,17 @@ function equalizeHeight() {
 }
 
 
+function accordionToggle() {
+	$('#accordion div').on('show.bs.collapse', function () {
+		$(this).find("span").removeClass('glyphicon-collapse-down').addClass('glyphicon-collapse-up');
+	});
+	$('#accordion div').on('hide.bs.collapse', function () {
+		$(this).find("span").removeClass('glyphicon-collapse-up').addClass('glyphicon-collapse-down');
+	});
+}
+
+
+
 $(function() {
 
 	$('.collapse').collapse();
@@ -26,5 +37,12 @@ $(function() {
 	equalizeHeight();
 
 	setFullHeight();
-	
+
+	accordionToggle();
+
+	setTimeout(function() {
+		$(".desc-area h3").each(function(index, el) {
+			console.log(index + ", " + el);
+		});
+	},1000);
 });
