@@ -153,6 +153,27 @@ html {
 						}
 					}
 				}
+
+				#accordion {
+
+					div {
+						padding:5px 0;
+
+						span {
+							float:right;
+						}
+
+						div {
+
+							ul {
+
+								li {
+									padding:5px;
+								}
+							}
+						}
+					}
+				}
 			}
 
 			.content {
