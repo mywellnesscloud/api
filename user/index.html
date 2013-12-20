@@ -1,18 +1,237 @@
 ---
 layout: page
-title: Authentication
+title: User 
 ---
 
 
 <div class="row line">
-	<div class="desc-area col-md-12">
-		<h4 id="summary">
-			Authentication
-		</h4>
-		<small>
-			Fictum,  deserunt mollit anim laborum astutumque! Gallia est omnis divisa in partes tres, quarum. Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Qui ipsorum lingua Celtae, nostra Galli appellantur.
-			Contra legem facit qui id facit quod lex prohibet. Cum sociis natoque penatibus et magnis dis parturient. Ab illo tempore, ab est sed immemorabili. Contra legem facit qui id facit quod lex prohibet. Nihilne te nocturnum praesidium Palati, nihil urbis vigiliae. Qui ipsorum lingua Celtae, nostra Galli appellantur.
-			Excepteur sint obcaecat cupiditat non proident culpa. Quo usque tandem abutere, Catilina, patientia nostra? Quam temere in vitiis, legem sancimus haerentia. Quis aute iure reprehenderit in voluptate velit esse. Unam incolunt Belgae, aliam Aquitani, tertiam. Nec dubitamus multa iter quae et nos invenerat.
-		</small>
+	<div class="desc-area col-md-10">
+		<h3 id="profile">
+			User
+		</h3>
+		<p class="desc">
+			Users are mywellness.com registered users that use technogym ecosystem tracking their activities, biometrics, manage theirs training program, challenges, training plan
+		</p>
 	</div>
 </div>
+
+<div class="row line">
+       	<div class="desc-area col-md-10">
+       		<h3 id="profile">
+       			Profile
+       		</h3>
+       		<p class="desc">
+                Retreive the current logged user profile.<br/>
+                <dl>
+                    <dt>Url:</dt>
+                    <dt>https://services.mywellness.com/api/[version]/User/[UserId]/Profile</dt>
+                    <dt>HttpMethod:</dt>
+                    <dt>POST</dt>
+                </dl>
+        	</p>
+       		<div class="parameter">
+       		<h4>
+       			Parameters
+       		</h4>
+       		<table class="servicepar">
+       		     <tbody>
+       				<tr>
+       				  <td>access_token:</td>
+       				  <td><strong>string</strong> <em>required</em>  <br> user access</td>
+       				</tr>
+       			</tbody>
+       			</table>
+       		</div>
+       		<div class="parameter">
+       		<h4>
+       			Response
+       		</h4>
+       		<table class="servicepar">
+       		  <tbody>
+       				<tr>
+       				  <td>gender:</td>
+       				  <td><strong>string</strong><br />M or F</td></tr>
+       				<tr>
+       				  <td>culture:</td>
+       				  <td><strong>string</strong><br />en-US (language-country)</td>
+       				</tr>
+       				<tr>
+       				  <td>timeZone:</td>
+       				  <td><strong>string</strong><br />http://msdn.microsoft.com/en-us/library/gg154758.aspx)</td>
+       				</tr>
+                    <tr>
+       				  <td>measurementSystem:</td>
+       				  <td><strong>string</strong><br />Metric,UsStandard</td>
+       				</tr>
+       				</tbody>
+       			</table>
+       		 <pre>
+       				{
+                    "data": {
+                        "userId": "1b939e3b-ae3c-e311-a8f9-00059a3c7800",
+                        "firstName": "Mario",
+                        "lastName": "Rossi",
+                        "nickName": "mRossi",
+                        "email": "mrossi@myemail.com",
+                        "birthDate": "1978-10-09",
+                        "gender": "M",
+                        "culture": "en-US",
+                        "pictureUrl": "https://49d20dd51f195e17f79d-38d68b6fdb14e96aed84d8b8bcfab8b6.ssl.cf3.rackcdn.com/dev/users/photo/437d9511-e57c-4e73-a4c8-480b7eee4df4.jpg",
+                        "timeZone": "GMT Standard Time",
+                        "measurementSystem": "Metric"
+                    },
+                    "version": "1.0"
+                }
+       		  </pre>
+       		</div>
+       	</div>
+</div> 
+		
+
+ <div class="row line">
+	<div class="desc-area col-md-10">
+		<h3 id="aspiration">
+			Aspiration
+		</h3>
+		<p class="desc">
+              This request is used to retrieve last user aspiration map for the current authenticated user. Returns the user aspiration map.<br/>
+             <dl>
+                 <dt>Url:</dt>
+                 <dt>https://services.mywellness.com/api/[version]/User/[UserId]/Aspiration</dt>
+                 <dt>HttpMethod:</dt>
+                 <dt>POST</dt>
+             </dl>
+     	</p>
+		<div class="parameter">
+		<h4>
+			Parameters
+		</h4>
+		<table class="servicepar">
+		     <tbody>
+				<tr>
+				  <td>access_token:</td>
+				  <td><strong>string</strong> <em>required</em>  <br> user access</td>
+				</tr>
+			</tbody>
+			</table>
+		</div>
+		<div class="parameter">
+		<h4>
+			Response
+		</h4>
+		<table class="servicepar">
+		  <tbody>
+				<tr>
+				  <td>gender:</td>
+				  <td><strong>string</strong><br />M or F</td></tr>
+				<tr>
+				  <td>doneIn:</td>
+				  <td><strong>string</strong><br />facility data in which the aspiration has been taken. Can be omitted.</td>
+				</tr>
+				<tr>
+				  <td>mainAspiration:</td>
+				  <td><strong>string</strong><br />[Power,Shape,Sport,Balance,Move,Fun]</td>
+				</tr>
+                 <tr>
+				  <td>secondaryAspiration:</td>
+				  <td><strong>string</strong><br />Can be omitted. [Power,Shape,Sport,Balance,Move,Fun]</td>
+				</tr>
+				</tbody>
+			</table>
+		 <pre>
+	        {
+                "data": {
+                  "doneIn": {
+                    "name": "'Wellness' Center & 'friends'",
+                    "webSite": "http://www.technogym.com/directory/wellnesscentertg",
+                    "logoUrl": "https://49d20dd51f195e17f79d-38d68b6fdb14e96aed84d8b8bcfab8b6.ssl.cf3.rackcdn.com/dev/facilities/4911cf01-83b6-4daf-8d9c-11a9c3c6bed9/logo_7d8cf7a5-8ef6-4487-9505-777b6c1641de.png"
+                  },
+                  "doneOn": "2013-08-07",
+                  "power": 33,
+                  "shape": 6,
+                  "sport": 22,
+                  "balance": 10,
+                  "move": 0,
+                  "fun": 29,
+                  "badgeUrl": "http://www.technogym.com/AspirationService/BadgeImage.aspx?power=33&shape=6&sport=22&balance=10&move=0&fun=29",
+                  "mainAspiration": "Power",
+                  "secondaryAspiration": "Fun"
+                },
+                "version": "1.0"
+              }
+		  </pre>
+		</div>
+	</div>
+</div> 
+
+
+<div class="row line">
+	<div class="desc-area col-md-10">
+			<h3 id="aspiration">
+				Aspiration
+			</h3>
+			<p class="desc">
+				This request is used to retrieve current activity summary. Activity summary is composed by:
+		  <ul>
+			   <li>Training data: last training date, effectiveness and judice</li>
+			   <li>Movement data: current weekly move and target</li>
+			   <li>Current activity level (available only for mywellnesskey users)</li>
+		   </ul>
+			   <dl>
+				   <dt>Url:</dt>
+				   <dt>https://services.mywellness.com/api/[version]/User/[UserId]/ActivitySummary</dt>
+				   <dt>HttpMethod:</dt>
+				   <dt>POST</dt>
+			   </dl>
+		</p>
+			<div class="parameter">
+			<h4>
+				Parameters
+			</h4>
+			<table class="servicepar">
+				 <tbody>
+					<tr>
+					  <td>access_token:</td>
+					  <td><strong>string</strong> <em>required</em>  <br> user access</td>
+					</tr>
+				</tbody>
+				</table>
+			</div>
+			<div class="parameter">
+			<h4>
+				Response
+			</h4>
+			<table class="servicepar">
+			  <tbody>
+					<tr>
+					  <td>lastTrainingEffectiveness:</td>
+					  <td><strong>int</strong><br />0 to 100</td></tr>
+					<tr>
+					  <td>weeklyTargetMove:</td>
+					  <td><strong>int</strong><br /></td>
+					</tr>
+					<tr>
+					  <td>weeklyMove:</td>
+					  <td><strong>int</strong><br /></td>
+					</tr>
+					</tbody>
+				</table>
+			 <pre>
+				{
+			   "data": {
+					   "lastTrainingEffectiveness": 100,
+					   "lastTrainingEffectivenessJudice": "You trained like an athlete",
+					   "lastTrainingDate": "2013-11-09 00:00:00 +01:00",
+					   "lastTrainingDateDescription": "Last training on 09 November 2013",
+					   "weeklyTargetMove": 3500,
+					   "weeklyMove": 752
+					  },
+				   "version": "1.0"
+				}
+			  </pre>
+			</div>
+		</div>
+	</div>      
+
+
+
