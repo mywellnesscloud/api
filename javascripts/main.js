@@ -41,7 +41,7 @@ $(function() {
 	accordionToggle();
 
 	setTimeout(function() {
-		$(".desc-area h2").each(function(index, el) {
+		$(".desc-area h3").each(function(index, el) {
 			console.log(index + ", " + el);
 		});
 	},1000);
