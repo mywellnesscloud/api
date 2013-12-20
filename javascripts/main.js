@@ -28,6 +28,8 @@ function accordionToggle() {
 	});
 }
 
+
+
 $(function() {
 
 	$('.collapse').collapse();
@@ -37,5 +39,9 @@ $(function() {
 	setFullHeight();
 
 	accordionToggle();
+
+	$.each($("desc-area h2"), function(index, el) {
+		console.log(index + ", " + el);
+	});
 	
 });
