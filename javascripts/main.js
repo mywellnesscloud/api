@@ -40,7 +40,7 @@ $(function() {
 
 	accordionToggle();
 
-	$.each($("desc-area h2"), function(index, el) {
+	$("desc-area h2").each(function(index, el) {
 		console.log(index + ", " + el);
 	});
 	
