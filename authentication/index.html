@@ -120,8 +120,7 @@ title: Authentication
 		  <tbody>
 				<tr>
 				  <td>client_id:</td>
-				  <td>
-						<strong>string</strong> <em>required</em>  <br> application’s id</td>
+				  <td><strong>string</strong> <em>required</em>  <br> application’s id</td>
 				</tr>
 				<tr>
 				  <td>client_secret:</td>
@@ -192,12 +191,17 @@ title: Authentication
 			Access the API using an Access Token
 		</h3>
 		<p class="desc">
-			The application will now be able to make requests on the user’s behalf using the access_token query string parameter (GET) or POST body, or the Authorization header.
-			Applications should check for a 401 Unauthorized response. Access for those tokens has been revoked by the user.
+			The application will now be able to make requests on the user’s behalf using the access_token and the userid in (GET) or POST body.
+			Applications should check for a Unauthorized response. Access for those tokens has been revoked by the user.
+            <b>In all requests must be specified the header named X-MWAPPS-OAUTHCLIENTID containing the application client_id. </b>
 		</p>
 	</div>
 </div>
 
 <div class="row line">
-	<div class="desc-area col-md-10"></div>
+	<div class="desc-area col-md-10">
+        <br/>
+        <br /><br /><br />
+
+    </div>
 </div>
