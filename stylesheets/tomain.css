@@ -1,0 +1,43 @@
+
+h3
+{
+	margin-top:60px !important;
+}  
+
+.parameter
+{
+	margin-top:0px;
+}
+
+.parameter h4
+{
+	margin-top:20px !important;
+	font-size:14px;
+	font-weight:bold;
+}
+
+.parameter table.servicepar
+{
+	 border-bottom: 1px solid #CCCCCC;
+    border-top: 1px solid #CCCCCC;
+    margin-bottom: 20px;
+    margin-top: 6px;
+    padding-bottom: 3px;
+    padding-top: 8px;
+	font-size:11px;
+	width:100%;
+}
+
+.parameter td:first-child, table.parameter th:first-child {
+    font-weight: bold;
+    padding-left: 20px;
+    padding-right: 15px;
+    text-align: right;
+    white-space: nowrap;
+    width: 100px;
+}
+
+.desc 
+{
+	font-size:13px;
+}
