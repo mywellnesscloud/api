@@ -1,0 +1,10 @@
+{
+  "errors": [
+    {
+      "field": "http-protocol",
+      "type": "Security",
+      "details": "https required",
+      "errorMessage": "Api can be called only using https protocol"
+    }
+  ]
+}

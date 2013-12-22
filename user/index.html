@@ -10,7 +10,8 @@ title: User
 			User
 		</h3>
 		<p class="desc">
-			Users are mywellness.com registered users that use technogym ecosystem tracking their activities, biometrics, manage theirs training program, challenges, training plan
+			Users are mywellness.com registered users that use technogym ecosystem tracking their activities, biometrics, manage theirs training program, challenges and training plan.
+			Resources available on a User are: Profile, Aspiration, ActivitySummary.
 		</p>
 	</div>
 </div>
@@ -66,7 +67,7 @@ title: User
        				</tbody>
        			</table>
        		 <pre>
-       				{
+       			{
                     "data": {
                         "userId": "1b939e3b-ae3c-e311-a8f9-00059a3c7800",
                         "firstName": "Mario",
@@ -76,7 +77,7 @@ title: User
                         "birthDate": "1978-10-09",
                         "gender": "M",
                         "culture": "en-US",
-                        "pictureUrl": "https://49d20dd51f195e17f79d-38d68b6fdb14e96aed84d8b8bcfab8b6.ssl.cf3.rackcdn.com/dev/users/photo/437d9511-e57c-4e73-a4c8-480b7eee4df4.jpg",
+                        "pictureUrl": "https://cnd.mywellness.com//photo/437d9511-e57c-4e73-a4c8-480b7eee4df4.jpg",
                         "timeZone": "GMT Standard Time",
                         "measurementSystem": "Metric"
                     },
@@ -97,9 +98,9 @@ title: User
               This request is used to retrieve last user aspiration map for the current authenticated user. Returns the user aspiration map.<br/>
              <dl>
                  <dt>Url:</dt>
-                 <dt>https://services.mywellness.com/api/[version]/User/[UserId]/Aspiration</dt>
+                 <dd>https://services.mywellness.com/api/[version]/User/[UserId]/Aspiration</dd>
                  <dt>HttpMethod:</dt>
-                 <dt>POST</dt>
+                 <dd>POST</dd>
              </dl>
      	</p>
 		<div class="parameter">
@@ -144,7 +145,7 @@ title: User
                   "doneIn": {
                     "name": "'Wellness' Center & 'friends'",
                     "webSite": "http://www.technogym.com/directory/wellnesscentertg",
-                    "logoUrl": "https://49d20dd51f195e17f79d-38d68b6fdb14e96aed84d8b8bcfab8b6.ssl.cf3.rackcdn.com/dev/facilities/4911cf01-83b6-4daf-8d9c-11a9c3c6bed9/logo_7d8cf7a5-8ef6-4487-9505-777b6c1641de.png"
+                    "logoUrl": "https://cdn.mywellness.com/facilities/4911cf01-83b6-4daf-8d9c-11a9c3c6bed9/logo.png"
                   },
                   "doneOn": "2013-08-07",
                   "power": 33,
@@ -168,7 +169,7 @@ title: User
 <div class="row line">
 	<div class="desc-area col-md-10">
 			<h3 id="aspiration">
-				Aspiration
+				Activity Summary
 			</h3>
 			<p class="desc">
 				This request is used to retrieve current activity summary. Activity summary is composed by:
@@ -179,9 +180,9 @@ title: User
 		   </ul>
 			   <dl>
 				   <dt>Url:</dt>
-				   <dt>https://services.mywellness.com/api/[version]/User/[UserId]/ActivitySummary</dt>
+				   <dd>https://services.mywellness.com/api/[version]/User/[UserId]/ActivitySummary</dt>
 				   <dt>HttpMethod:</dt>
-				   <dt>POST</dt>
+				   <dd>POST</dt>
 			   </dl>
 		</p>
 			<div class="parameter">
@@ -218,7 +219,7 @@ title: User
 				</table>
 			 <pre>
 				{
-			   "data": {
+					"data": {
 					   "lastTrainingEffectiveness": 100,
 					   "lastTrainingEffectivenessJudice": "You trained like an athlete",
 					   "lastTrainingDate": "2013-11-09 00:00:00 +01:00",
@@ -226,7 +227,7 @@ title: User
 					   "weeklyTargetMove": 3500,
 					   "weeklyMove": 752
 					  },
-				   "version": "1.0"
+				    "version": "1.0"
 				}
 			  </pre>
 			</div>
