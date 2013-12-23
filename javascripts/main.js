@@ -30,19 +30,20 @@ function accordionToggle() {
 
 
 
+
+
+
 $(function() {
 
 	$('.collapse').collapse();
-
+	//console.log(window._collapse);
+	
 	equalizeHeight();
 
 	setFullHeight();
 
 	accordionToggle();
-
-	setTimeout(function() {
-		$(".desc-area h3").each(function(index, el) {
-			console.log(index + ", " + el);
-		});
-	},1000);
+	
+		$('pre').each(function(i, e) {hljs.highlightBlock(e)});
+	
 });

@@ -1,18 +1,358 @@
 ---
 layout: page
-title: Authentication
+title: Activity Stream 
 ---
 
 
 <div class="row line">
-	<div class="desc-area col-md-12">
-		<h4 id="summary">
-			Authentication
-		</h4>
-		<small>
-			Fictum,  deserunt mollit anim laborum astutumque! Gallia est omnis divisa in partes tres, quarum. Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Qui ipsorum lingua Celtae, nostra Galli appellantur.
-			Contra legem facit qui id facit quod lex prohibet. Cum sociis natoque penatibus et magnis dis parturient. Ab illo tempore, ab est sed immemorabili. Contra legem facit qui id facit quod lex prohibet. Nihilne te nocturnum praesidium Palati, nihil urbis vigiliae. Qui ipsorum lingua Celtae, nostra Galli appellantur.
-			Excepteur sint obcaecat cupiditat non proident culpa. Quo usque tandem abutere, Catilina, patientia nostra? Quam temere in vitiis, legem sancimus haerentia. Quis aute iure reprehenderit in voluptate velit esse. Unam incolunt Belgae, aliam Aquitani, tertiam. Nec dubitamus multa iter quae et nos invenerat.
-		</small>
+	<div class="desc-area col-md-10">
+		<h3 id="profile">
+			Activity Stream
+		</h3>
+		<p class="desc">
+		  Activity Stream is the log of all interaction that user did using mywellness cloud applications.
+          Stream entries can be retrieved per day or month. Currently only current and previous month data are available using apis.
+		  Each activity stream entity is available for a specific TimeFrame Id.<br/>
+		  TimeframeId is an integer representation of a month like 201311 as november 2013 or for a specific day like 20131002 as 2 october 2013.
+		  Id must be included in resourse url. 
+		</p>
 	</div>
 </div>
+
+<div class="row line">
+       	<div class="desc-area col-md-10">
+       		<h3 id="profile">
+       			Time Series
+       		</h3>
+       		<p class="desc">
+                Retreive the user time and series data. Time and series data are available only for months for these categories: Calories, Move, Clycling distance, Running Distance and Time.<br/>
+                Response always contains all month days also if user has no results.
+				<dl class="dl-horizontal">
+					<dt>Url:</dt>
+					<dd>https://services.mywellness.com/api/[version]/ActivityStream/[TimeFrameId]/TimeSeries</dd>
+					<dt>HttpMethod:</dt>
+					<dd>GET</dd>
+				</dl>
+        	</p>
+			
+       		<div class="parameter">
+       		<h4>
+       			Parameters
+       		</h4>
+       		<table class="servicepar">
+       		     <tbody>
+       				<tr>
+       				  <td>token:</td>
+       				  <td><strong>string</strong> <em>required</em>  <br> user access token</td>
+       				</tr>
+					<tr>
+       				  <td>dataType:</td>
+       				  <td><strong>string</strong> <em>required</em>  <br> Move, Calories, RunningDistance, CyclingDistance </td>
+					  </tr>
+       			</tbody>
+       			</table>
+       		</div>
+			<pre>
+            {
+               "dataType": "Move",
+               "token": ""
+            }
+			</pre>
+       		<div class="parameter">
+       		<h4>
+       			Response
+       		</h4>
+			<table class="servicepar">
+		  <tbody>
+				<tr>
+				  <td>day:</td>
+				  <td><strong>int</strong><br />integer representation of a day yyyyMMdd</td></tr>
+				<tr>
+				  <td>value:</td>
+				  <td><strong>string</strong><br />counter representation as string.  In case of distance the data is represented in  meter </td></tr>
+				<tr>
+				  <td>rawValue:</td>
+				  <td><strong>double</strong><br />counter raw value. In case of distance the data is represented in  meter</td>
+				 </tr>
+			</tbody>
+			</table>
+       		<pre>
+            {
+              "data": {
+                "days": [
+                  {
+                    "day": 20131201,
+                    "value": "2619",
+                    "rawValue": 2619.0
+                  },
+                  {
+                    "day": 20131202,
+                    "value": "3292",
+                    "rawValue": 3292.0
+                  },
+                  {
+                    "day": 20131203,
+                    "value": "2650",
+                    "rawValue": 2650.0
+                  },
+                  {
+                    "day": 20131204,
+                    "value": "3032",
+                    "rawValue": 3032.0
+                  },
+                  {
+                    "day": 20131205,
+                    "value": "2169",
+                    "rawValue": 2169.0
+                  },
+                  {
+                    "day": 20131206,
+                    "value": "2123",
+                    "rawValue": 2123.0
+                  },
+            	..... 
+                  {
+                    "day": 20131231,
+                    "value": "0",
+                    "rawValue": 0.0
+                  }
+                ]
+              },
+              "version": "1.0"
+            }
+       		  </pre>
+       		</div>
+       	</div>
+</div> 
+		
+
+ <div class="row line">
+	<div class="desc-area col-md-10">
+		<h3 id="aspiration">
+			Daily Counters
+		</h3>
+		<p class="desc">
+              This request is used to retrieve a complete daily user activity counters. Response is organized in Technogym Cerfied data and totals.<br/>
+			  Technogym Certified data are data that are collected on a technogym equipment using a tgs/mywellness key device or using a connected equipment.
+			  Doing so Techngnogym certified that this activities has been performed by the user. Technogym Certified exercises are not modifiable so are stored exactly how the user did it on an equipment.
+			  Total contains all activities user did manually or automatically.
+             <dl  class="dl-horizontal">
+                 <dt>Url:</dt>
+                 <dd>https://services.mywellness.com/api/[version]/ActivityStream/[TimeFrameId]/DailyCounters</dd>
+                 <dt>HttpMethod:</dt>
+                 <dd>POST</dd>
+             </dl>
+     	</p>
+		<div class="parameter">
+		<h4>
+			Parameters
+		</h4>
+		<table class="servicepar">
+		     <tbody>
+				<tr>
+				  <td>access_token:</td>
+				  <td><strong>string</strong> <em>required</em>  <br> user access</td>
+				</tr>
+			</tbody>
+			</table>
+		</div>
+        <pre>
+            { 
+              "access_token" :""
+            }
+         </pre>
+		<div class="parameter">
+		<h4>
+			Response
+		</h4>
+		<table class="servicepar">
+		  <tbody>
+				<tr>
+				  <td>day:</td>
+				  <td><strong>int</strong><br />integer representation of a day yyyyMMdd</td></tr>
+				<tr>
+				  <td>technogymCertified:</td>
+				  <td><strong>object</strong><br />Technogym Certified user data.</td>
+				</tr>
+				<tr>
+				  <td>duration:</td>
+				  <td><strong>int</strong><br />activities total duration in seconds.</td>
+				</tr>
+                 <tr>
+				  <td>move:</td>
+				  <td><strong>int</strong><br />activities total move</td>
+				</tr>
+				 <tr>
+				  <td>calories:</td>
+				  <td><strong>int</strong><br />activities total calories</td>
+				</tr>
+				 <tr>
+				  <td>runningDistance:</td>
+				  <td><strong>int</strong><br />activities total run distance in meter</td>
+				</tr>
+				<tr>
+				  <td>cyclingDistance:</td>
+				  <td><strong>int</strong><br />activities total cycling distance in meter</td>
+				</tr>
+				</tbody>
+			</table>
+		 <pre>
+           {
+            "data": {
+                "day": 20131210,
+                "technogymCertified": {
+                  "duration": 0,
+                  "move": 0,
+                  "calories": 0,
+                  "runningDistance": 0,
+                  "cyclingDistance": 0
+                },
+                "totals": {
+                  "duration": 0,
+                  "move": 0,
+                  "calories": 0,
+                  "runningDistance": 0,
+                  "cyclingDistance": 0
+                }
+              },
+              "version": "1.0"
+            }
+		  </pre>
+		</div>
+	</div>
+</div> 
+
+
+<div class="row line">
+	<div class="desc-area col-md-10">
+			<h3 id="aspiration">
+				Logs
+			</h3>
+			<p class="desc">
+				This services provide all user activities logbook. This contains logs of all iteration user did on mywellness cloud.
+				Logs can be retrieved per day or month depending on the [TimeFrameId].
+			 <dl class="dl-horizontal">
+			   <dt>Url:</dt>
+			   <dd>https://services.mywellness.com/api/[version]/ActivityStream/[TimeFrameId]/Logs</dt>
+			   <dt>HttpMethod:</dt>
+			   <dd>POST</dt>
+			   </dl>
+			</p>
+			<div class="parameter">
+			<h4>
+				Parameters
+			</h4>
+			<table class="servicepar">
+				 <tbody>
+					<tr>
+					  <td>access_token:</td>
+					  <td><strong>string</strong> <em>required</em>  <br> user access</td>
+					</tr>
+				</tbody>
+				</table>
+			</div>
+			<pre>
+            { 
+              "access_token" :""
+            }
+			</pre>
+			<div class="parameter">
+			<h4>
+				Response
+			</h4>
+			<table class="servicepar">
+			  <tbody>
+					<tr>
+					  <td>image:</td>
+					  <td><strong>string (full url)</strong><br />log image full url</td></tr>
+					<tr>
+					  <td>title:</td>
+					  <td><strong>string</strong><br /> Log title</td>
+					</tr>
+					<tr>
+					  <td>description:</td>
+					  <td><strong>string</strong><br /> Log description</td>
+					</tr>
+					<tr>
+					  <td>when:</td>
+					  <td><strong>string</strong><br /> date as string following user settings </td>
+					</tr>
+					<tr>
+					  <td>time:</td>
+					  <td><strong>string</strong><br /> HH:mm</td>
+					</tr>
+					<tr>
+					  <td>logType:</td>
+					  <td><strong>string</strong><br /> Activity, CaloriesTracker, TrainingProgram,  WorkoutSession, Challenge, AspirationMap</td>
+					</tr>
+					</tbody>
+				</table>
+			 <pre>
+            {
+              "data": {
+                "items": [
+                  {
+                    "id": "7f7001a2-bf6e-4cb4-8ec0-8235336c0c60",
+                    "image": "http://cdn.mywellness.com/devices/fitbit_logbook.png",
+                    "title": "Fitbit",
+                    "description": "Il dispositivo è stato sincronizzato, hai accumulato 823 move. Il totale delle calorie misurate dal tuo dispositivo sono 1112 kcal di cui 380 kcal di movimento.( 0 mls )",
+                    "when": "02/12/2013",
+                    "time": "11:50",
+                    "logType": "CaloriesTracker"
+                  },
+                  {
+                    "id": "7e112697-f21c-477b-b1d2-aaf1b9133d3a",
+                    "image": "http://cdn.mywellness.com/physical_activities/2bcb4159-7fa1-4379-8a36-36ba12ce84ea/images/m50136.png",
+                    "title": "Running",
+                    "description": "You exercised for 3.11 mls in 20:00 min doing 786 MOVEs",
+                    "when": "03/12/2013",
+                    "time": "12:10",
+                    "logType": "Activity"
+                  },
+                  {
+                    "id": "d39480c0-6384-4796-9ac7-4189715c55e5",
+                    "image": "http://cdn.mywellness.com/physical_activities/2bcb4159-7fa1-4379-8a36-36ba12ce84ea/images/m50136.png",
+                    "title": "Running",
+                    "description": "You exercised for 4.35 mls in 30:00 min doing 1111 MOVEs",
+                    "when": "04/12/2013",
+                    "time": "12:45",
+                    "logType": "Activity"
+                  },
+                  {
+                    "id": "6acee05b-ae0e-4a9c-97fe-5196c28c901f",
+                    "image": "http://cdn.mywellness.com/challenges/movepoints.jpg",
+                    "title": "MWKEY",
+                    "description": "Ti sei iscritto ad una nuova sfida!",
+                    "when": "11/12/2013",
+                    "time": "08:47",
+                    "logType": "Challenge"
+                  },
+                  {
+                    "id": "dd0df129-dcb7-40ac-b58e-f0d887633de4",
+                    "image": "http://cdn.mywellness.com/training_program/startfreesession.png",
+                    "title": "Seduta fatta @Technogym, the wellness company",
+                    "description": "Hai completato la seduta <<Seduta libera>> di 1 esercizio - 32 min - 2605 MOVEs",
+                    "when": "13/12/2013",
+                    "time": "17:30",
+                    "logType": "WorkoutSession"
+                  },
+                  {
+                    "id": "aff0f9dd-9896-477d-bdc1-0fde107c3231",
+                    "image": "http://cdn.mywellness.com/challenges/movepoints.jpg",
+                    "title": "MWKEY",
+                    "description": "Congratulazioni hai vinto la sfida «MWKEY» accumulando 1500 MOVEs at Technogym, the wellness company.",
+                    "when": "13/12/2013",
+                    "time": "00:01",
+                    "logType": "Challenge"
+                  },
+                 ]
+              },
+              "version": "1.0"
+            }
+			  </pre>
+			</div>
+		</div>
+	</div>      
+
+
+

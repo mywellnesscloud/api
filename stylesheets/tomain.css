@@ -50,3 +50,13 @@ dd
 {
 	font-style:italic;
 }
+
+pre
+{
+	padding-top:10px;
+	padding-botton:10px;
+	border-left: 5px solid #CCCCCC !important;
+	margin-left: 5px !important;
+	padding-left:-20px;
+	font-size:11px !important;
+}
