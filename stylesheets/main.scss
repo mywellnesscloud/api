@@ -14,9 +14,50 @@ $break-large: 992px;
 
 html {
 	font-size:90%;
+	height: 100%;
 
 	body {
 		background: $white;
+		height: 100%;
+
+		.wrapper, .row {
+		   height: 100%;
+		   margin-left:0;
+		   margin-right:0;
+		}
+
+		.wrapper:before, .wrapper:after,
+		.column:before, .column:after {
+		    content: "";
+		    display: table;
+		}
+
+		.wrapper:after,
+		.column:after {
+		    clear: both;
+		}
+
+		.column {
+		    height: 100%;
+		    overflow: auto;
+		    *zoom:1;
+		}
+
+		.column .padding {
+		    padding: 20px;
+		}
+
+		.box {
+		  	bottom: 0; /* increase for footer use */
+		    left: 0;
+		    position: absolute;
+		    right: 0;
+		    top: 0;
+		    background-image:url('/assets/example/bg_suburb.jpg');
+		    background-size:cover;
+		    background-attachment:fixed;
+		}
+
 
 		&.homepage {
 			background: $logogray !important;
@@ -110,49 +151,41 @@ html {
 			padding:0 15px;
 			font-family: 'Open Sans', sans-serif;
 
-			.navigation {
+			#sidebar {
 				background: $logogray;
 				color: $white;
 				overflow: hidden;
 
-				.fix {
-					@media screen and (max-width: $break-small) {
-						position: relative;
-					}
-					@media screen and (min-width: $break-large) {
-						position: fixed;
-					}
+				a {
+					color: $white;
+				}
+
+				h4 {
+					text-shadow:1px 1px 0 $black;
+				}
+
+				.logo {
+					margin-top:15px;
+					width:150px;
+					height:auto;
+				}
+
+				#api {
+					margin-top:40px;
 
 					a {
-						color: $white;
-					}
-
-					h4 {
-						text-shadow:1px 1px 0 $black;
-					}
-
-					.logo {
-						margin-top:15px;
-						width:150px;
-						height:auto;
-					}
-
-					#api {
-						margin-top:40px;
-
-						a {
-							font-weight: 400;
-						}
-					}
-
-					#resources {
-						margin-top:20px;
-
-						ul {
-							margin: 0 0 0 10px;
-						}
+						font-weight: 400;
 					}
 				}
+
+				#resources {
+					margin-top:20px;
+
+					ul {
+						margin: 0 0 0 10px;
+					}
+				}
+				
 
 				#accordion {
 
@@ -176,7 +209,7 @@ html {
 				}
 			}
 
-			.content {
+			#main {
 
 				.line {
 					

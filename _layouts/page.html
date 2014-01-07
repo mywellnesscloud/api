@@ -1,26 +1,33 @@
 {% include header.html %}
-		<body data-spy="scroll" data-target="#accordion">
-			<div class="wrapper">
-				<div class="row">
-					<div class="navigation col-md-2 column">
-						<div class="fix">
-							<div class="row">
-								<div class="col-md-12">
-									<img class="logo" src="{{site.data.config.root}}images/api_logo.png" />
-								</div>
-							</div>
-							
-							{% include summary.html %}
+<body>
+	<div class="wrapper">
+		<div class="box">
+			<div class="row">
+				<div class="column col-sm-2" id="sidebar">
 
-							{% include dynamicmenu.html %}
-						</div>
+					<a href="#" class="logo">
+						<img class="logo" src="{{site.data.config.root}}images/api_logo.png" />
+					</a>
+					<h4>mywellness cloud API</h4>
+					<br>
 
-						<div class="content col-md-10 column">
-							{{ content }}
-						</div>
 
+					{% include summary.html %}
+
+					<br>
+
+					{% include dynamicmenu.html %}
+
+				</div>
+
+				<div class="column col-sm-10" id="main">
+					<div class="padding">
+						{{ content }}
 					</div>
 				</div>
+
 			</div>
-		
-{% include footer.html %}
+		</div>
+	</div>
+
+	{% include footer.html %}

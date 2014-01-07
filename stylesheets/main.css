@@ -1,8 +1,37 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
 html {
-  font-size: 90%; }
+  font-size: 90%;
+  height: 100%; }
   html body {
-    background: white; }
+    background: white;
+    height: 100%; }
+    html body .wrapper, html body .row {
+      height: 100%;
+      margin-left: 0;
+      margin-right: 0; }
+    html body .wrapper:before, html body .wrapper:after,
+    html body .column:before, html body .column:after {
+      content: "";
+      display: table; }
+    html body .wrapper:after,
+    html body .column:after {
+      clear: both; }
+    html body .column {
+      height: 100%;
+      overflow: auto;
+      *zoom: 1; }
+    html body .column .padding {
+      padding: 20px; }
+    html body .box {
+      bottom: 0;
+      /* increase for footer use */
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      background-image: url("/assets/example/bg_suburb.jpg");
+      background-size: cover;
+      background-attachment: fixed; }
     html body.homepage {
       background: #41535d !important; }
       html body.homepage h2, html body.homepage h4 {
@@ -73,47 +102,41 @@ html {
       height: 100%;
       padding: 0 15px;
       font-family: 'Open Sans', sans-serif; }
-      html body .wrapper .navigation {
+      html body .wrapper #sidebar {
         background: #41535d;
         color: white;
         overflow: hidden; }
-        @media screen and (max-width: 768px) {
-          html body .wrapper .navigation .fix {
-            position: relative; } }
-        @media screen and (min-width: 992px) {
-          html body .wrapper .navigation .fix {
-            position: fixed; } }
-        html body .wrapper .navigation .fix a {
+        html body .wrapper #sidebar a {
           color: white; }
-        html body .wrapper .navigation .fix h4 {
+        html body .wrapper #sidebar h4 {
           text-shadow: 1px 1px 0 #1a1a1a; }
-        html body .wrapper .navigation .fix .logo {
+        html body .wrapper #sidebar .logo {
           margin-top: 15px;
           width: 150px;
           height: auto; }
-        html body .wrapper .navigation .fix #api {
+        html body .wrapper #sidebar #api {
           margin-top: 40px; }
-          html body .wrapper .navigation .fix #api a {
+          html body .wrapper #sidebar #api a {
             font-weight: 400; }
-        html body .wrapper .navigation .fix #resources {
+        html body .wrapper #sidebar #resources {
           margin-top: 20px; }
-          html body .wrapper .navigation .fix #resources ul {
+          html body .wrapper #sidebar #resources ul {
             margin: 0 0 0 10px; }
-        html body .wrapper .navigation #accordion div {
+        html body .wrapper #sidebar #accordion div {
           padding: 5px 0; }
-          html body .wrapper .navigation #accordion div span {
+          html body .wrapper #sidebar #accordion div span {
             float: right; }
-          html body .wrapper .navigation #accordion div div ul li {
+          html body .wrapper #sidebar #accordion div div ul li {
             padding: 5px; }
-      html body .wrapper .content .line .desc-area {
+      html body .wrapper #main .line .desc-area {
         background: white;
         padding-bottom: 20px; }
-        html body .wrapper .content .line .desc-area h4 {
+        html body .wrapper #main .line .desc-area h4 {
           margin-top: 80px; }
-        html body .wrapper .content .line .desc-area small {
+        html body .wrapper #main .line .desc-area small {
           display: block;
           margin-bottom: 20px; }
-        html body .wrapper .content .line .desc-area pre, html body .wrapper .content .line .desc-area code {
+        html body .wrapper #main .line .desc-area pre, html body .wrapper #main .line .desc-area code {
           background: none;
           border: none;
           color: #1a1a1a;
