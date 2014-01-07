@@ -3,19 +3,83 @@ layout: page
 title: Summary
 ---
 
+<div class="row line">
+	<div class="desc-area col-md-10">   
+		<h3>
+			Mywellness cloud V1 API
+		</h3>
+		<p class="desc">
+			Mywellness cloud V1 API is currently in BETA, therefore some parts are incomplete and inconsistent. Developers can expect regular changes and updates as we continue to iterate.
+		</p>
+	</div>
+</div>
+
+
 
 <div class="row line">
 	<div class="desc-area col-md-10">
-		<h4 id="summary">
-			Summary
-		</h4>
-		<small>
-			underwork
-		</small>
+		<h3 id="access">
+			Access
+		</h3>
+		<p class="desc">
+			All service call to mywellness cloud apis require an user access_token defining the user and the application making the call. Any registered application can obtain an user access token by first requesting an application sending an email to <a href=mailto:'api@technogym.com?subject=api access'>api@technogym.com</a>, 
+			including a briefly descriptions about company / product / service and integration scope and purpouse.<br />
+			Mywellness cloud team will contact the requestor in order to complete the application registration.<br/>
+			As registration completation result, application requestor receive an application client and secret using which he starts the OAuth authorization flow.<br/>
+			A mywellness cloud API application only has access to a user’s data after the user has authorized the application to use it. 
+		</p>
+	</div>
+</div>
 
-		<pre>	
-			accesstoken
+
+
+<div class="row line">
+	<div class="desc-area col-md-10">
+		<h3 id="rate-limiting">
+			Rate limit
+		</h3>
+		<p class="desc">
+			Mywellness cloud API usage is limited on a per-application basis using a short term, 15 minute, limit and a long term, daily, limit. <br/>
+			The default rate limit allows 60 requests every 15 minutes, with up to 5.500 requests per day.<br/>
+			An application’s short term, 15 minute, limit is reset at natural 15 minute intervals corresponding to 0, 15, 30 and 45 minutes after the hour.<br/>
+			Requests exceeding the limit will return 403 Forbidden along with a JSON error message.<br/>
+			<br/>
+			As an application grows its rate limit may need to be reassessed. To request an adjustment contact mywellness cloud team  <a href=mailto:'api@technogym.com?subject=api access'>api@technogym.com</a>.
+		</p>
+	</div>
+</div>
+
+
+<div class="row line">
+	<div class="desc-area col-md-10">
+		<h3 id="conventions">
+			Conventions
+		</h3>
+		<h4>Response representation</h4>
+		<p class="desc">
+			Service response hase a standard defined format that has 2 main root fields named "data" and "errors". Those fields are mutually exclusive so only data or errors can be present.
+		</p>
+		<pre>
+           { 
+              "data" : {
+							.... 
+					   },
+              "errors": [{}
+							,{}]
+           }
 		</pre>
 	</div>
-	
+</div>
+
+
+<div class="row line">
+	<div class="desc-area col-md-10">
+		<h3 id="toc">
+			Service Term and Conditions
+		</h3>
+		<p class="desc">
+				.............................
+		</p>
+		
+	</div>
 </div>

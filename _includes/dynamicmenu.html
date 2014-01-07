@@ -1,7 +1,7 @@
 <div class="row">
 	<div id="resources" class="col-md-10 col-md-offset-1">
 		<h4>RESOURCES</h4>
-		<div id="accordion">
+		<div id="accordion">    
 
 			<div>
 				<a href="{{site.data.config.root}}authentication" class="authentication">Authentication</a>
@@ -35,16 +35,23 @@
 			<div>
 				<a href="{{site.data.config.root}}activitystream" class="activitystream">Activity Stream</a>
 				<span class="glyphicon glyphicon-collapse-down" data-parent="#accordion" data-toggle="collapse" data-target="#activitystream"></span>
-
 				<div id="activitystream" class="collapse in">
+					<ul class="list-unstyled">
+						<li><a href="{{site.data.config.root}}activitystream#timeseries">Time Series</a></li>
+						<li><a href="{{site.data.config.root}}activitystream#dailycounters">Daily Counters</a></li>
+						<li><a href="{{site.data.config.root}}activitystream#activitysummary">Activity Logs</a></li>
+					</ul>
 				</div>
 			</div>
 
 			<div>
-				<a href="{{site.data.config.root}}activity" class="activity">Activity</a>
+				<a href="{{site.data.config.root}}activity" class="activity">Activity </a>
 				<span class="glyphicon glyphicon-collapse-down" data-parent="#accordion" data-toggle="collapse" data-target="#activity"></span>
 
 				<div id="activity" class="collapse in">
+					<ul class="list-unstyled">
+						<li><a href="{{site.data.config.root}}activity#details">Activity Details</a></li>
+					</ul>
 				</div>
 			</div>
 
