@@ -104,8 +104,7 @@ html {
       font-family: 'Open Sans', sans-serif; }
       html body .wrapper #sidebar {
         background: #41535d;
-        color: white;
-        overflow: hidden; }
+        color: white; }
         html body .wrapper #sidebar a {
           color: white; }
         html body .wrapper #sidebar h4 {
