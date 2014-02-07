@@ -14,6 +14,11 @@ $(function() {
 
 	accordionToggle();
 	
-		$('pre').each(function(i, e) {hljs.highlightBlock(e)});
+	$('pre').each(function(i, e) {hljs.highlightBlock(e)});
+
+
+	var path = window.location.pathname.split( '/' );
+	var area = pathArray[1];
+	console.log(area);
 	
 });
