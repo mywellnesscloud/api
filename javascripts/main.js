@@ -18,7 +18,7 @@ $(function() {
 
 
 	var path = window.location.pathname.split( '/' );
-	var area = pathArray[1];
+	var area = path[1];
 	console.log(area);
 	
 });
