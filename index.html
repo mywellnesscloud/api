@@ -1,39 +1,104 @@
 ---
-layout: home
-title: Available soon
+layout: page
+title: Getting Started
 ---
 
-<body class="homepage">
-  <div class="wrapper">
+<div class="row line">
+	<div class="desc-area col-md-10">   
+		<h3>
+			V1 API
+		</h3>
+		<p class="desc">
+			The mywellness cloud V1 API is currently in BETA, therefore some parts are incomplete and inconsistent. Developers can expect regular changes and updates as we continue to iterate.
+		</p>
+	</div>
+</div>
 
-    <div class="row">
-      <div class="col-md-12">
+<div class="row line">
+	<div class="desc-area col-md-10">   
+		<h3>
+			Getting Started
+		</h3>
+		<p class="desc">
+			The mywellness cloud is an open platform that lets millions of people around the world track, measure and improve their health and fitness. The mywellness cloud API enables the exchange of select data in order to extend and augment the mywellness cloud user-experience and support complementary services in a collaborative wellness-ecosystem.<br />
+			
+			Three key principles govern the use of the mywellness cloud API:
+			The data belongs to the user. We are stewards of the data and have an obligation to protect it and use it responsibly.
+			Data can only be collected with explicit user permission. Only collect what you need and only use it as you say you will.
+			User must have a mechanism to disable access and to request that any collected data be deleted.
 
-        <div class="row">
-          <div class="col-md-12">
+			By visiting the Developer Portal, registering as a Developer and/or using the mywellness cloud API, you agree to abide by the terms and conditions set forth in the mywellness cloud API Terms of Use.<br />
+		</p>
+	</div>
+</div>
 
-            <div class="cloud_wrapper">
-              <div class="cloud_top"></div>
-              <div class="cloud_middle">
-                <div id="gear_1"></div>
-                <div id="gear_2"></div>
-                <div id="gear_3"></div>
-                <div id="gear_4"></div>
-              </div>
-              <div class="cloud_under"></div>
-            </div>
+<div class="row line">
+	<div class="desc-area col-md-10">
+		<h3 id="access">
+			Access
+		</h3>
+		<p class="desc"> 
+			All service call to the mywellness cloud API require an <b>access_token</b> defining the user and the application making the call. To obtain an <b>access_token</b> first you have to register you application at <a href="http://www.mywellness.com/appregistration">mywellness.com/appregistration</a>, including a brief description about your company/ product / service and integration scope and purpose. Shortly after your request the mywellness cloud team will contact you to complete the registration.<br />
 
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12 text-center">
+			See the <a href="http://mywellnesscloud.github.io/api/authentication/">Authentication</a> page for more information about generating access tokens and the OAuth authorization flow.<br />
 
-            <h2>mywellness cloud API</h2>
-            <h4><i>available soon</i></h4>
+			Generally speaking a mywellness cloud API application only has access to a user's data after the user has authorized the application to use it.<br />
+		</p>
+	</div>
+</div>
 
-          </div>
-        </div>
 
-      </div>
-    </div>
-  </div>
+
+<div class="row line">
+	<div class="desc-area col-md-10">
+		<h3 id="rate-limiting">
+			Rate limiting
+		</h3>
+		<p class="desc">
+			Mywellness cloud API usage is limited on a per-application basis using a short term, 15 minute, limit and a long term, daily, limit. <br/>
+			The default rate limit allows 60 requests every 15 minutes, with up to 5.500 requests per day.<br/>
+			An application’s short term, 15 minute, limit is reset at natural 15 minute intervals corresponding to 0, 15, 30 and 45 minutes after the hour.<br/>
+			Requests exceeding the limit will return 403 Forbidden along with a JSON error message.<br/>
+			<br/>
+			As an application grows its rate limit may need to be reassessed. To request an adjustment contact mywellness cloud team  <a href="mailto:developer@technogym.com?subject=api access">developer@technogym.com</a>.
+		</p>
+	</div>
+</div>
+
+
+<div class="row line">
+	<div class="desc-area col-md-10">
+		<h3 id="conventions">
+			Conventions
+		</h3>
+		<h4>Response representation</h4>
+		<p class="desc">
+			Service response has a standard defined format that has 2 main root fields named "data" and "errors". Those fields are mutually exclusive so only data or errors can be present.
+		</p>
+		<pre>
+        {
+           "data" : {},
+           "errors": [{}]
+        }
+		</pre>
+	</div>
+</div>
+
+
+<div class="row line">
+	<div class="desc-area col-md-10">
+		<h3 id="toc">
+			Support
+		</h3>
+		<p class="desc">
+		   For general API questions please use the mywellness cloud API FAQ.<br/>
+		   To contact a mywellness cloud API engineer, please send an email to <a href="mailto:developer@technogym.com?subject=api access">developer@technogym.com</a>. All questions, comments and bug reports are appreciated.<br/>
+		   
+		   Please limit your questions to those specific to the API.
+		   <br/>
+		   <br/>
+		   <br/>
+		</p>
+		
+	</div>
+</div>
