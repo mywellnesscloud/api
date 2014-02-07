@@ -21,8 +21,6 @@ $(function() {
 	var area = path[2];
 	console.log(area);
 
-	$("#" + area).css("height", "auto").addClass('active');
-
-
+	$("#" + area).css("height", "auto").addClass("in");
 	
 });
