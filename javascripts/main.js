@@ -21,7 +21,7 @@ $(function() {
 	var area = path[2];
 	console.log(area);
 
-	$("#" + area).removeClass("collapse").addClass("in");
+	$("#" + area).addClass('active');
 
 
 	
