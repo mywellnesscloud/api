@@ -18,7 +18,11 @@ $(function() {
 
 
 	var path = window.location.pathname.split( '/' );
-	var area = path[1];
+	var area = path[2];
 	console.log(area);
+
+	$("#" + area).removeClass("collapse").addClass("in");
+
+
 	
 });
