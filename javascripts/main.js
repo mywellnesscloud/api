@@ -16,11 +16,9 @@ $(function() {
 	
 	$('pre').each(function(i, e) {hljs.highlightBlock(e)});
 
-
+	//gestione path per mantenere aperto l'accordion nella sezione specifica
 	var path = window.location.pathname.split( '/' );
 	var area = path[2];
-	console.log(area);
-
 	$("#" + area).css("height", "auto").addClass("in");
 	
 });
