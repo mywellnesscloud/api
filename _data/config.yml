@@ -1,5 +1,5 @@
 mainpage: index
-root: /api/
-root_api: /
+root_api: /api/
+root: /
 sections: ['Authentication','User','ActivityStream','Activity','TrainingProgram','WorkoutSession']
 title: ora

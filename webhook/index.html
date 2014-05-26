@@ -1,0 +1,248 @@
+---
+layout: page
+title: Push Notification
+---
+
+
+<div class="row line">
+	<div class="desc-area col-md-12">
+		<h2 id="summary">
+			Webhook
+		</h2>
+		Webhook is the technology mywellness cloud uses as push notification service.&nbsp;&nbsp; Each webhook is associated to an&nbsp;&nbsp;<b><i>event topic</i></b>&nbsp;&nbsp;that is correlated to the user interaction on mywellness cloud and a specific&nbsp;&nbsp;<b><i>target url</i></b>&nbsp;&nbsp;that is where notification must be sent.<br/>
+		<br/>
+		Each hook can be configured, defining the&nbsp;&nbsp;<b><i>event topic</i></b>&nbsp;&nbsp;and the&nbsp;&nbsp;<b><i>target url</i></b>&nbsp;&nbsp;using&nbsp;&nbsp;<a href="#subscribe">a weebhook subscription service</a>.
+		Hooks can also be removed using&nbsp;&nbsp;<a href="#unsubscribe">a weebhook remove service</a>.
+		<br/>
+		<br/>
+			<br/>
+		Available&nbsp;&nbsp;<b><i>event topics</i></b>&nbsp;&nbsp;are:
+		<br/>
+		<small>
+		<ul>
+			<li><a href="#uservisit">User visits a facility.</a>&nbsp;&nbsp;&nbsp;-->&nbsp;&nbsp;Event topic: <b>UserVisit</b></li>
+			<li><a href="#tpexpiration">User has a training program expired.</a>&nbsp;&nbsp;&nbsp;-->&nbsp;&nbsp;Event topic: <b>TpExpiration</b></li>
+			<li><a href="#coahmessage">User receives a message from his\her coach.</a>&nbsp;&nbsp;&nbsp;-->&nbsp;&nbsp;Event topic: <b>CoachMessage</b></li>
+			<li><a href="#startworkoutsession">User starts a new workout session in a facility.</a>&nbsp;&nbsp;&nbsp;-->&nbsp;&nbsp;Event topic: <b>StartWorkoutSession</b></li>
+			<li><a href="#closeworkoutsession">User completes a work session in a facility.</a>&nbsp;&nbsp;&nbsp;-->&nbsp;&nbsp;Event topic: <b>CloseWorkoutSession</b></li>
+			<li><a href="#startexeciseonequipment">User starts an exercise on Unity.</a>&nbsp;&nbsp;&nbsp;-->&nbsp;&nbsp;Event topic: <b>StartExeciseOnEquipment</b></li>
+			<li><a href="#endexerciseonequipment">User ends an exercise on Unity.</a>&nbsp;&nbsp;&nbsp;-->&nbsp;&nbsp;Event topic: <b>EndExerciseOnEquipment</b></li>
+			<li><a href="#challengesubscription">User takes part of new challenge.</a>&nbsp;&nbsp;&nbsp;-->&nbsp;&nbsp;Event topic: <b>ChallengeSubscription</b></li>
+			<li><a href="#challengewinner">User is a challenge winner.</a>&nbsp;&nbsp;&nbsp;-->&nbsp;&nbsp;Event topic: <b>ChallengeWinner</b></li>
+			<li><a href="#challengecompleted">User has completed a challenge.</a>&nbsp;&nbsp;&nbsp;-->&nbsp;&nbsp;Event topic: <b>ChallengeCompleted</b></li>
+		</ul>
+		<br />
+		</small>
+	</div>
+</div>
+ 
+ 
+ <div class="row line">
+       	<div class="desc-area col-md-10">
+       		<h3 id="subscribe">
+       			Subscribe a webhook
+       		</h3>
+       		<p class="desc">
+                Register a target url for a specific user event topic.<br/>
+				<dl class="dl-horizontal">
+					<dt>Url:</dt>
+					<dd>https://services.mywellness.com/api/[version]/Webhook/[EventTopic]/Subscribe</dd>
+					<dt>HttpMethod:</dt>
+					<dd>POST</dd>
+				</dl>
+        	</p>
+			
+       		<div class="parameter">
+       		<h4>
+       			Parameters
+       		</h4>
+       		<table class="servicepar">
+       		     <tbody>
+       				<tr>
+       				  <td>token:</td>
+       				  <td><strong>string</strong> <em>required</em>  <br> user access token </td>
+       				</tr>
+					<tr>
+       				  <td>posturl:</td>
+       				  <td><strong>string</strong> <em>required</em>  <br> target url in which the notification must be sent. (Ex: http://myend.point.me/) </td>
+       				</tr>
+       			</tbody>
+       			</table>
+       		</div>
+			<pre>
+            { 
+              "token" :"",
+			  "postUrl":""
+            }
+			</pre>
+       		<div class="parameter">
+       		<h4>
+       			Response
+       		</h4>
+       		<table class="servicepar">
+       		  <tbody>
+       				<tr>
+       				  <td>date:</td>
+       				  <td><strong>bool</strong><br />True in case of done registration</td>
+					</tr>
+       		   </tbody>
+       			</table>
+       		 <pre>
+             {
+               "data": true,
+               "version": "1.0"
+             }
+       		  </pre>
+       		</div>
+       	</div>
+</div>
+ 
+  <div class="row line">
+       	<div class="desc-area col-md-10">
+       		<h3 id="unsubscribe">
+       			UnSubscribe a webhook
+       		</h3>
+       		<p class="desc">
+                Remove a user event topic.<br/>
+				<dl class="dl-horizontal">
+					<dt>Url:</dt>
+					<dd>https://services.mywellness.com/api/[version]/Webhook/[EventTopic]/UnSubscribe</dd>
+					<dt>HttpMethod:</dt>
+					<dd>POST</dd>
+				</dl>
+        	</p>
+			
+       		<div class="parameter">
+       		<h4>
+       			Parameters
+       		</h4>
+       		<table class="servicepar">
+       		     <tbody>
+       				<tr>
+       				  <td>token:</td>
+       				  <td><strong>string</strong> <em>required</em>  <br> user access token </td>
+       				</tr>
+				</tbody>
+       			</table>
+       		</div>
+			<pre>
+            { 
+              "token" :"", "postUrl":""
+            }
+			</pre>
+       		<div class="parameter">
+       		<h4>
+       			Response
+       		</h4>
+       		<table class="servicepar">
+       		  <tbody>
+       				<tr>
+       				  <td>date:</td>
+       				  <td><strong>bool</strong><br />True in case of done registration</td>
+					</tr>
+       		   </tbody>
+       			</table>
+       		 <pre>
+             {
+               "data": true,
+			   "version": "1.0"
+             }
+       		  </pre>
+       		</div>
+       	</div>
+</div>
+
+
+
+ <div class="row line">
+		<div class="desc-area col-md-10">
+			<h3 id="descriptionContent">Notification</h4>
+			Http notifications are delivered as http post using an application/json content-type as payload. Each hook has its specific payload format containing information that are event specific.
+			Http post notifications are delivered providing a custom http headers which purpose is to ensure mywellnesscloud identity as notification sender, event topic type and the target user.<br/>
+			<br/>
+			<br/>
+			<p>Notification Headers</p>
+			<small>
+			<table class="servicepar" cellpadding="2">
+				<tbody>
+				<tr>
+				  <td>X-MWAPPS-WEBHOOK-USERID</td>
+				  <td><strong>guid</strong><br />User that is the notification target</td></tr>
+				<tr>
+				  <td>X-MWAPPS-WEBHOOK-TOPIC</td>
+				  <td><strong>string</strong><br />the event topic that has generated the notification (UserVisit,TpExpiration,....)</td>
+				</tr>
+				<tr>
+				  <td>X-MWAPPS-WEBHOOK-IDENTITY</td>
+				  <td><strong>string</strong><br />HEX(SHA1(lower(target_url)))</i> using SHA1 as hash algoritnm and the OAuth2 client_secret as HASH key.</td>
+				</tr>
+				</tbody>
+			</table>
+			</small>
+			<br/><br/>
+			<small><b>Hashing header a python sample:</b>
+				<pre>
+			from hashlib import sha1
+			import hmac
+			import binascii
+			<br/>	
+			key = "9AB321456BEF8909876543EDAB9876543212321"
+			targeturl = "http://My.target.Mio/".lower()
+
+			hashed = hmac.new(key, targeturl, sha1)
+
+			header = binascii.b2a_hex(hashed.digest())
+				</pre>
+			</small>
+			
+			<h4 id="startworkoutsession">
+       			Start workout session
+       		</h3>
+       		<div class="parameter">
+					<h5>
+						notification payload
+					</h5>
+					<table class="servicepar">
+					  <tbody>
+							<tr>
+							  <td>When:</td>
+							  <td><strong>datetime and offset</strong><br />yyyy-MM-dd hh:mm:ss +00:00</td></tr>
+							<tr>
+							  <td>Where:</td>
+							  <td><strong>object</strong><br />LogoUrl, Name, and GeoPosition</td>
+							</tr>
+							<tr>
+							  <td>Who:</td>
+							  <td><strong>object</strong><br />Id, FirstName, LastName</td>
+							</tr>
+							<tr>
+							  <td>Workout:</td>
+							  <td><strong>object</strong><br />ExeToDo,MoveToDo</td>
+							</tr>
+							</tbody>
+						</table>
+					 <pre>
+	{
+		"When": "2014-05-26 10:27:00 +02:00",
+		"Where": {
+			"LogoUrl": "http://mywellness.com/facilities/4911cf01-83b6-4daf-8d9c-11a9c3c6bed9/3ad0f2a2-85b0-4fe8-b301-1e81c8fcfcf8.png",
+			"Name": "Technogym, the wellness company in Wellness Valley",
+			"Latitude": 39.3015862,
+			"Longitude": 9.063962
+		},
+		"Who": {
+			"FirstName": "Andrea",
+			"LastName": "Saany",
+			"Id": "b5198fc2-5de3-404a-98f6-2cf5c8644c25"
+		},
+		"Workout": 
+		{
+			"ExeToDo": 0,
+			"MoveToDo": 0
+		}
+	}
+	
+					  </pre>
+       		</div>
+       	</div>
+</div>  
