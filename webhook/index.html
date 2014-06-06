@@ -9,30 +9,31 @@ title: Push Notification
 		<h2 id="summary">
 			Webhook
 		</h2>
-		Webhook is the technology mywellness cloud uses as push notification service.&nbsp;&nbsp; Each webhook is associated to an&nbsp;&nbsp;<b><i>event topic</i></b>&nbsp;&nbsp;that is correlated to the user interaction on mywellness cloud and a specific&nbsp;&nbsp;<b><i>target url</i></b>&nbsp;&nbsp;that is where notification must be sent.<br/>
+		Webhook is the technology mywellness cloud uses as push notification service. Each webhook has an <b><i>event topic</i></b> and a  <b><i>target url</i></b>.<br/>The <b><i>event topic</i></b> is the event that triggers the hook and it is related to the user interaction on mywellness cloud.<br/>The<b><i> target url</i></b> is the end point a third parties application has registered in order to get notified as soon as the event occurred. 
 		<br/>
-		Each hook can be configured, defining the&nbsp;&nbsp;<b><i>event topic</i></b>&nbsp;&nbsp;and the&nbsp;&nbsp;<b><i>target url</i></b>&nbsp;&nbsp;using&nbsp;&nbsp;<a href="#subscribe">a weebhook subscription service</a>.
-		Hooks can also be removed using&nbsp;&nbsp;<a href="#unsubscribe">a weebhook remove service</a>.
+		Each hook can be configured, defining the&nbsp;&nbsp;<b><i>event topic</i></b>&nbsp;&nbsp;and the&nbsp;&nbsp;<b><i>target url</i></b>&nbsp;&nbsp;using&nbsp;&nbsp;<a href="#subscribe">a webhook subscription service</a>.
+		Hooks can also be removed using&nbsp;&nbsp;<a href="#unsubscribe">a webhook remove service</a>.
+		<br/><br/>
+		<i>Webhook are currently available only for selected partners, activation request must be sent to <a href="mailto:developer@technogym.com?subject=webhook request">developer@technogym.com</a></i>.<br/>
 		<br/>
-		<br/>
-			<br/>
+			<br/><br/>
 		Available&nbsp;&nbsp;<b><i>event topics</i></b>&nbsp;&nbsp;are:
-		<br/>
-		<small>
+		<br/><br/>
+		
 		<ul>
-			<li><a href="#uservisit">User visits a facility.</a>&nbsp;&nbsp;&nbsp;-->&nbsp;&nbsp;Event topic: <b>UserVisit</b></li>
-			<li><a href="#tpexpiration">User has a training program expired.</a>&nbsp;&nbsp;&nbsp;-->&nbsp;&nbsp;Event topic: <b>TpExpiration</b></li>
-			<li><a href="#coahmessage">User receives a message from his\her coach.</a>&nbsp;&nbsp;&nbsp;-->&nbsp;&nbsp;Event topic: <b>CoachMessage</b></li>
-			<li><a href="#startworkoutsession">User starts a new workout session in a facility.</a>&nbsp;&nbsp;&nbsp;-->&nbsp;&nbsp;Event topic: <b>StartWorkoutSession</b></li>
-			<li><a href="#closeworkoutsession">User completes a work session in a facility.</a>&nbsp;&nbsp;&nbsp;-->&nbsp;&nbsp;Event topic: <b>CloseWorkoutSession</b></li>
-			<li><a href="#startexeciseonequipment">User starts an exercise on Unity.</a>&nbsp;&nbsp;&nbsp;-->&nbsp;&nbsp;Event topic: <b>StartExeciseOnEquipment</b></li>
-			<li><a href="#endexerciseonequipment">User ends an exercise on Unity.</a>&nbsp;&nbsp;&nbsp;-->&nbsp;&nbsp;Event topic: <b>EndExerciseOnEquipment</b></li>
-			<li><a href="#challengesubscription">User takes part of new challenge.</a>&nbsp;&nbsp;&nbsp;-->&nbsp;&nbsp;Event topic: <b>ChallengeSubscription</b></li>
-			<li><a href="#challengewinner">User is a challenge winner.</a>&nbsp;&nbsp;&nbsp;-->&nbsp;&nbsp;Event topic: <b>ChallengeWinner</b></li>
-			<li><a href="#challengecompleted">User has completed a challenge.</a>&nbsp;&nbsp;&nbsp;-->&nbsp;&nbsp;Event topic: <b>ChallengeCompleted</b></li>
+			<li><a href="#uservisit">User visits a facility.</a>&nbsp;&nbsp;&nbsp;Event topic: <b>UserVisit</b></li> 
+			<!--<li><a href="#tpexpiration">User has a training program expired.</a>&nbsp;&nbsp;&nbsp&nbsp;&nbsp;Event topic: <b>TpExpiration</b></li> -->
+			<li><a href="#coahmessage">User receives a message from his\her coach.</a>&nbsp;&nbsp;&nbsp;Event topic: <b>CoachMessage</b></li>
+			<li><a href="#startworkoutsession">User starts a new workout session in a facility.</a>&nbsp;&nbsp;&nbsp;Event topic: <b>StartWorkoutSession</b></li>
+			<li><a href="#closeworkoutsession">User completes a work session in a facility.</a>&nbsp;&nbsp;&nbsp;Event topic: <b>CloseWorkoutSession</b></li>
+			<li><a href="#startexeciseonequipment">User starts an exercise on Unity.</a>&nbsp;&nbsp;&nbsp;Event topic: <b>StartExeciseOnEquipment</b></li>
+			<li><a href="#endexerciseonequipment">User ends an exercise on Unity.</a>&nbsp;&nbsp;&nbsp;Event topic: <b>EndExerciseOnEquipment</b></li>
+			<li><a href="#challengesubscription">User takes part of new challenge.</a>&nbsp;&nbsp;&nbsp;Event topic: <b>ChallengeSubscription</b></li>
+			<li><a href="#challengewinner">User is a challenge winner.</a>&nbsp;&nbsp;&nbsp;Event topic: <b>ChallengeWinner</b></li>
+			<li><a href="#challengecompleted">User has completed a challenge.</a>&nbsp;&nbsp;&nbsp;Event topic: <b>ChallengeCompleted</b></li>
 		</ul>
 		<br />
-		</small>
+		
 	</div>
 </div>
  
@@ -43,7 +44,7 @@ title: Push Notification
        			Subscribe a webhook
        		</h3>
        		<p class="desc">
-                Register a target url for a specific user event topic.<br/>
+                Subscribing a weekhook is the operation that associate a target url for a specific user event topic.<br/>
 				<dl class="dl-horizontal">
 					<dt>Url:</dt>
 					<dd>https://services.mywellness.com/api/[version]/Webhook/[EventTopic]/Subscribe</dd>
@@ -70,10 +71,10 @@ title: Push Notification
        			</table>
        		</div>
 			<pre>
-            { 
-              "token" :"",
-			  "postUrl":""
-            }
+			{ 
+			"token" :"",
+			"postUrl":""
+			}
 			</pre>
        		<div class="parameter">
        		<h4>
@@ -82,16 +83,16 @@ title: Push Notification
        		<table class="servicepar">
        		  <tbody>
        				<tr>
-       				  <td>date:</td>
+       				  <td>data:</td>
        				  <td><strong>bool</strong><br />True in case of done registration</td>
 					</tr>
        		   </tbody>
        			</table>
        		 <pre>
-             {
-               "data": true,
-               "version": "1.0"
-             }
+			{
+			"data": true,
+			"version": "1.0"
+			}
        		  </pre>
        		</div>
        	</div>
@@ -126,9 +127,10 @@ title: Push Notification
        			</table>
        		</div>
 			<pre>
-            { 
-              "token" :"", "postUrl":""
-            }
+			{ 
+			"token" :"",
+			"postUrl":""
+			}
 			</pre>
        		<div class="parameter">
        		<h4>
@@ -143,10 +145,10 @@ title: Push Notification
        		   </tbody>
        			</table>
        		 <pre>
-             {
-               "data": true,
-			   "version": "1.0"
-             }
+			{
+			"data": true,
+			"version": "1.0"
+			}
        		  </pre>
        		</div>
        	</div>
@@ -167,7 +169,7 @@ title: Push Notification
 				<tbody>
 				<tr>
 				  <td>X-MWAPPS-WEBHOOK-USERID</td>
-				  <td><strong>guid</strong><br />User that is the notification target</td></tr>
+				  <td><strong>guid</strong><br />User that is the notification subject</td></tr>
 				<tr>
 				  <td>X-MWAPPS-WEBHOOK-TOPIC</td>
 				  <td><strong>string</strong><br />the event topic that has generated the notification (UserVisit,TpExpiration,....)</td>
@@ -182,22 +184,23 @@ title: Push Notification
 			<br/><br/>
 			<small><b>Hashing header a python sample:</b>
 				<pre>
-			from hashlib import sha1
-			import hmac
-			import binascii
-			<br/>	
-			key = "9AB321456BEF8909876543EDAB9876543212321"
-			targeturl = "http://My.target.Mio/".lower()
+		from hashlib import sha1
+		import hmac
+		import binascii
+		<br/>	  
+		key = "9AB321456BEF8909876543EDAB9876543212321"
+		targeturl = "http://My.target.Mio/".lower()
 
-			hashed = hmac.new(key, targeturl, sha1)
+		hashed = hmac.new(key, targeturl, sha1)
 
-			header = binascii.b2a_hex(hashed.digest())
+		header = binascii.b2a_hex(hashed.digest())
+		print(header) #656d4b79a80afbca08388860c151e04171280a1c
 				</pre>
 			</small>
 			
 			<h4 id="startworkoutsession">
        			Start workout session
-       		</h3>
+       		</h4>
        		<div class="parameter">
 					<h5>
 						notification payload
@@ -244,5 +247,389 @@ title: Push Notification
 	
 					  </pre>
        		</div>
-       	</div>
+			
+			<h4 id="coahmessage">
+       			Coach Message
+       		</h4>
+       		<div class="parameter">
+					<h5>
+						coach message payload
+					</h5>
+					<table class="servicepar">
+					  <tbody>
+							<tr>
+							  <td>When:</td>
+							  <td><strong>datetime and offset</strong><br />yyyy-MM-dd hh:mm:ss +00:00</td></tr>
+							<tr>
+							  <td>Where:</td>
+							  <td><strong>object</strong><br />(Coach Data) FirstName, LastName, PictureUrl</td>
+							</tr>
+							<tr>
+							  <td>Who:</td>
+							  <td><strong>object</strong><br />(user) Id, FirstName, LastName</td>
+							</tr>
+							<tr>
+							  <td>Message:</td>
+							  <td><strong>object</strong><br />Subject,Body  (body can be missing)</td>
+							</tr>
+							</tbody>
+						</table>
+					 <pre>
+	{
+		"Where": {
+			"PictureUrl": "http://cdn2dev.mywellness.com/testext/users/photo/99440074-fd22-43f8-972d-5a2da5a56b02.jpg",
+			"FirstName": "Davide",
+			"LastName": "Lazzarini"
+		},
+		"Who": {
+			"FirstName": "Luca",
+			"LastName": "Casali",
+			"Id": "b5198fc2-5de3-404a-98f6-2cf5c8644c25"
+		},
+		"Message": {
+			"Subject": "title",
+			"Body": "desc"
+		},
+		"When": "2014-05-29 12:09:59 +02:00"
+	}
+	
+					  </pre>
+       		</div>
+			
+			<h4 id="uservisit">
+       			User visit a facility
+       		</h4>
+       		<div class="parameter">
+					<h5>
+						User enter in a facility 
+					</h5>
+					<table class="servicepar">
+					  <tbody>
+							<tr>
+							  <td>When:</td>
+							  <td><strong>datetime and offset</strong><br />yyyy-MM-dd hh:mm:ss +00:00</td></tr>
+							<tr>
+							  <td>Where:</td>
+							  <td><strong>object</strong><br />(Facility Data) LogoUrl, Name, Latitude, Longitude</td>
+							</tr>
+							<tr>
+							  <td>Who:</td>
+							  <td><strong>object</strong><br />(user) Id, FirstName, LastName</td>
+							</tr>
+							
+							</tbody>
+						</table>
+					 <pre>
+	{
+		"When": "2014-05-28 14:40:42 +02:00",
+		"Where": {
+			"LogoUrl": "http://cdn2dev.mywellness.com/testext/facilities/4225f7c2-ea49-4a41-884e-a35d02335a08/logo_c34ecce0-1b55-4be2-8bc0-cd6e9e7728b3.png",
+			"Name": "Ale & Co Club 4",
+			"Latitude": 43.4632835,
+			"Longitude": 11.8796339
+		},
+		"Who": {
+			"FirstName": "Luca",
+			"LastName": "Casali",
+			"Id": "b5198fc2-5de3-404a-98f6-2cf5c8644c25"
+		}
+	}
+	
+					  </pre>
+       		</div>
+			
+			<h4 id="closeworkoutsession">
+       			User complete a workout session
+       		</h4>
+       		<div class="parameter">
+					<h5>
+						User has completed his workout session in a facility
+					</h5>
+					<table class="servicepar">
+					  <tbody>
+							<tr>
+							  <td>When:</td>
+							  <td><strong>datetime and offset</strong><br />yyyy-MM-dd hh:mm:ss +00:00</td></tr>
+							<tr>
+							  <td>Where:</td>
+							  <td><strong>object</strong><br />(Facility Data) LogoUrl, Name, Latitude, Longitude</td>
+							</tr>
+							<tr>
+							  <td>Who:</td>
+							  <td><strong>object</strong><br />(user) Id, FirstName, LastName</td>
+							</tr>
+							<tr>
+							  <td>Workout:</td>
+							  <td><strong>object</strong><br />(What the user did in terms of exe done, moves and calories) DoneExe, Moves, Calories</td>
+							</tr>
+							
+							</tbody>
+						</table>
+					 <pre>
+	{
+		"When": "2014-05-28 18:16:23 +02:00",
+		"Where": {
+			"LogoUrl": "http://cdn2dev.mywellness.com/testext/facilities/4225f7c2-ea49-4a41-884e-a35d02335a08/logo_c34ecce0-1b55-4be2-8bc0-cd6e9e7728b3.png",
+			"Name": "Ale & Co Club 4",
+			"Latitude": 43.4632835,
+			"Longitude": 11.8796339
+		},
+		"Who": {
+			"FirstName": "Luca",
+			"LastName": "Casali",
+			"Id": "b5198fc2-5de3-404a-98f6-2cf5c8644c25"
+		},
+		"Workout": {
+			"DoneExe": 1,
+			"Moves": 877,
+			"Calories": 400
+		}
+	}
+	
+					  </pre>
+       		</div>
+			
+			<h4 id="startexeciseonequipment">
+       			User start an exercise 
+       		</h4>
+       		<div class="parameter">
+					<h5>
+						User start an exercise on a connected equipment
+					</h5>
+					<table class="servicepar">
+					  <tbody>
+							<tr>
+							  <td>When:</td>
+							  <td><strong>datetime and offset</strong><br />yyyy-MM-dd hh:mm:ss +02:00</td></tr>
+							<tr>
+							  <td>Where:</td>
+							  <td><strong>object</strong><br />(Facility Data) LogoUrl, Name, Latitude, Longitude</td>
+							</tr>
+							<tr>
+							  <td>Who:</td>
+							  <td><strong>object</strong><br />(user) Id, FirstName, LastName</td>
+							</tr>
+							<tr>
+							  <td>Exercise:</td>
+							  <td><strong>object</strong><br />EquipmentName (the name of the equipment in which the user is training)</td>
+							</tr>
+							
+							</tbody>
+						</table>
+					 <pre>
+	{
+		"When": "2014-05-29 14:41:28 +02:00",
+		"Where": {
+			"LogoUrl": "http://cdn2dev.mywellness.com/testext/facilities/4225f7c2-ea49-4a41-884e-a35d02335a08/logo_c34ecce0-1b55-4be2-8bc0-cd6e9e7728b3.png",
+			"Name": "Ale & Co Club 4",
+			"Latitude": 43.4632835,
+			"Longitude": 11.8796339
+		},
+		"Who": {
+			"FirstName": "Luca",
+			"LastName": "Casali",
+			"Id": "b5198fc2-5de3-404a-98f6-2cf5c8644c25"
+		},
+		"Exercise": {
+			"EquipmentName": "Run Artis"
+		}
+	}
+	
+					  </pre>
+       		</div>
+			
+			<h4 id="endexerciseonequipment">
+       			User ends an exercise 
+       		</h4>
+       		<div class="parameter">
+					<h5>
+						User ends an exercise on a connected equipment
+					</h5>
+					<table class="servicepar">
+					  <tbody>
+							<tr>
+							  <td>When:</td>
+							  <td><strong>datetime and offset</strong><br />yyyy-MM-dd hh:mm:ss +02:00</td></tr>
+							<tr>
+							  <td>Where:</td>
+							  <td><strong>object</strong><br />(Facility Data) LogoUrl, Name, Latitude, Longitude</td>
+							</tr>
+							<tr>
+							  <td>Who:</td>
+							  <td><strong>object</strong><br />(user) Id, FirstName, LastName</td>
+							</tr>
+							<tr>
+							  <td>Exercise:</td>
+							  <td><strong>object</strong><br />(Exercise done data) Name, Duration (sec),Move, Calories</td>
+							</tr>
+							
+							</tbody>
+						</table>
+					 <pre>
+	{
+		"When": "2014-06-04 15:30:33 +02:00",
+		"Where": {
+			"LogoUrl": "http://cdn2dev.mywellness.com/testext/facilities/4225f7c2-ea49-4a41-884e-a35d02335a08/logo_c34ecce0-1b55-4be2-8bc0-cd6e9e7728b3.png",
+			"Name": "Ale & Co Club 4",
+			"Latitude": 43.4632835,
+			"Longitude": 11.8796339
+		},
+		"Who": {
+			"FirstName": "Luca",
+			"LastName": "Casali",
+			"Id": "b5198fc2-5de3-404a-98f6-2cf5c8644c25"
+		},
+		"Exercise": {
+			"Calories": 125,
+			"Move": 274,
+			"Name": "Run Artis Quick start",
+			"Duration": 299
+		}
+	}
+	
+					  </pre>
+       		</div>
+       	
+			<h4 id="challengesubscription">
+       			User subscribe a challenge
+       		</h4>
+       		<div class="parameter">
+					<h5>
+						User take part of a challenge
+					</h5>
+					<table class="servicepar">
+					  <tbody>
+							<tr>
+							  <td>Where:</td>
+							  <td><strong>object</strong><br />(Facility Data) LogoUrl, Name, Latitude, Longitude</td>
+							</tr>
+							<tr>
+							  <td>Who:</td>
+							  <td><strong>object</strong><br />(user) Id, FirstName, LastName</td>
+							</tr>
+							<tr>
+							  <td>Challenge:</td>
+							  <td><strong>object</strong><br />Name, PictureUrl</td>
+							</tr>
+							
+							</tbody>
+						</table>
+					 <pre>
+	{
+		"Challenge": {
+			"Name": "Workout a squadre",
+			"PictureUrl": "http://cdn.mywellness.com/challenges/sessionsdone.jpg"
+		},
+		"Where": {
+			"LogoUrl": "http://cdn2dev.mywellness.com/testext/facilities/4225f7c2-ea49-4a41-884e-a35d02335a08/logo_c34ecce0-1b55-4be2-8bc0-cd6e9e7728b3.png",
+			"Name": "Ale & Co Club 4",
+			"Latitude": 43.4632835,
+			"Longitude": 11.8796339
+		},
+		"Who": {
+			"FirstName": "Luca",
+			"LastName": "Casali",
+			"Id": "b5198fc2-5de3-404a-98f6-2cf5c8644c25"
+		}
+	}
+		
+					  </pre>
+       		</div>
+		
+		
+			<h4 id="challengewinner">
+       			User win a challenge
+       		</h4>
+       				<div class="parameter">
+					<h5>
+						User take part of a challenge
+					</h5>
+					<table class="servicepar">
+					  <tbody>
+							<tr>
+							  <td>Where:</td>
+							  <td><strong>object</strong><br />(Facility Data) LogoUrl, Name, Latitude, Longitude</td>
+							</tr>
+							<tr>
+							  <td>Who:</td>
+							  <td><strong>object</strong><br />(user) Id, FirstName, LastName</td>
+							</tr>
+							<tr>
+							  <td>Challenge and Position:</td>
+							  <td><strong>object</strong><br />Name, PictureUrl, Counter (value and unit of measure), Final Position</td>
+							</tr>
+							
+							</tbody>
+						</table>
+					 <pre>
+	{
+		"Challenge": {
+			"Name": "Workout a squadre",
+			"Counter": "120 Move",
+			"Position": 1,
+			"PictureUrl": "http://cdn.mywellness.com/challenges/sessionsdone.jpg"
+		},
+		"Where": {
+			"LogoUrl": "http://cdn2dev.mywellness.com/testext/facilities/4225f7c2-ea49-4a41-884e-a35d02335a08/logo_c34ecce0-1b55-4be2-8bc0-cd6e9e7728b3.png",
+			"Name": "Ale & Co Club 4",
+			"Latitude": 43.4632835,
+			"Longitude": 11.8796339
+		},
+		"Who": {
+			"FirstName": "Luca",
+			"LastName": "Casali",
+			"Id": "b5198fc2-5de3-404a-98f6-2cf5c8644c25"
+		}
+	}
+					  </pre>
+       		</div>
+		
+		<h4 id="challengewinner">
+       			User complete a challenge
+       		</h4>
+       				<div class="parameter">
+					<h5>
+						User completes  a challenge
+					</h5>
+					<table class="servicepar">
+					  <tbody>
+							<tr>
+							  <td>Where:</td>
+							  <td><strong>object</strong><br />(Facility Data) LogoUrl, Name, Latitude, Longitude</td>
+							</tr>
+							<tr>
+							  <td>Who:</td>
+							  <td><strong>object</strong><br />(user) Id, FirstName, LastName</td>
+							</tr>
+							<tr>
+							  <td>Challenge and Position:</td>
+							  <td><strong>object</strong><br />Name, PictureUrl, Counter (value and unit of measure), Final Position</td>
+							</tr>
+							
+							</tbody>
+						</table>
+					 <pre>
+	{
+		"Challenge": {
+			"Name": "Workout a squadre",
+			"Counter": "120 Move",
+			"Position": 1,
+			"PictureUrl": "http://cdn.mywellness.com/challenges/sessionsdone.jpg"
+		},
+		"Where": {
+			"LogoUrl": "http://cdn2dev.mywellness.com/testext/facilities/4225f7c2-ea49-4a41-884e-a35d02335a08/logo_c34ecce0-1b55-4be2-8bc0-cd6e9e7728b3.png",
+			"Name": "Ale & Co Club 4",
+			"Latitude": 43.4632835,
+			"Longitude": 11.8796339
+		},
+		"Who": {
+			"FirstName": "Luca",
+			"LastName": "Casali",
+			"Id": "b5198fc2-5de3-404a-98f6-2cf5c8644c25"
+		}
+	}
+					  </pre>
+       		</div>
+		
+		</div>
 </div>  
