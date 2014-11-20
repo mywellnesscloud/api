@@ -1,0 +1,98 @@
+---
+layout: page
+title: Activity Upload 
+---
+
+<div class="row line">
+	<div class="desc-area col-md-10">
+		<h3 id="profile">
+			Activity Upload
+		</h3>
+		<p class="desc">
+		  User's activities can be submitted from third parties by uploading them as files.
+		</p>
+		<p>
+			Currently the following file formats are supported (please keep in mind that .FIT is the preferred representation).
+			<ul>
+				<li>FIT</li>
+				<li>TCX</li>
+			</ul>
+			We have provided a working example of activities upload, the source code is available <a href='https://github.com/mywellnesscloud/pyApiUsageSample'>at this repository</a>
+		</p>
+		<p>
+			<dl class="dl-horizontal">
+				<dt>Url:</dt>
+				<dd>https://services.mywellness.com/api/v1/User/[]UserId]/UploadActivity</dd>
+				<dt>HttpMethod:</dt>
+				<dd>POST</dd>
+			</dl>
+		</p>
+		
+		<!-- INPUT PARAMETERS -->
+		<div class="parameter">
+		<h4>
+			Parameters
+		</h4>
+		<table class="servicepar">
+			 <tbody>
+				<tr>
+				  <td>token:</td>
+				  <td><strong>string</strong> <em>required</em>  <br> user access token</td>
+				</tr>
+				<tr>
+				  <td>dataType:</td>
+				  <td><strong>string</strong> <em>required</em>  <br> FIT, TCX </td>
+				</tr>
+				<tr>
+				  <td>data:</td>
+				  <td><strong>string</strong> <em>required</em>  <br> base64 encoded file </td>
+				</tr>
+			</tbody>
+			</table>
+		</div>
+		<pre>
+		{
+			"data": "TG9yZW0gaXBzdW0gZG9sb3Igc2l0IGFtZXQsIGNvbnNlY3RldHVyIGFkaXBpc2NpbmcgZWxpdCwgc2VkIGRvIGV==",
+			"dataType": "FIT",
+			"token": ""
+		}
+		</pre>
+		
+		<!-- OUTPUT PARAMETERS -->
+		<div class="parameter">
+       		<h4>
+       			Response
+       		</h4>
+			<table class="servicepar">
+		  <tbody>
+				<tr>
+				  <td>created:</td>
+				  <td><strong>bool</strong><br />true if the activity has been successfully imported.</td></tr>
+				<tr>
+				  <td>activityId:</td>
+				  <td><strong>string</strong><br />identifier of the newly created activity.</td></tr>
+				<tr>
+				  <td>errorMessage:</td>
+				  <td><strong>string</strong><br />error message in case of failure. This field is null if activity creation is successful.</td>
+				 </tr>
+			</tbody>
+			</table>
+       		<pre>
+            {
+              "data": {
+                "results": [
+                  {
+                    "created": true,
+                    "activityId": "03afc7a7-46c2-478f-9a8b-6ffcd1cd7305",
+                    "errorMessage": ""
+                  }
+                ]
+              },
+              "version": "1.0"
+            }
+       		  </pre>
+       		</div>
+		
+			
+	</div>
+</div>
