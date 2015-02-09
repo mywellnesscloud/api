@@ -6,7 +6,7 @@ title: Calendar
 <div class="row line">
 	<div class="desc-area col-md-10">
 		<h3 id="profile">
-			User
+			Classes Calendar
 		</h3>
 		<p class="desc">
 			Users are mywellness.com registered users that use technogym ecosystem tracking their activities, biometrics, manage theirs training program, challenges and training plan.
@@ -55,36 +55,68 @@ title: Calendar
        		<table class="servicepar">
        		  <tbody>
        				<tr>
-       				  <td>gender:</td>
-       				  <td><strong>string</strong><br />M or F</td></tr>
+       				  <td>name:</td>
+       				  <td><strong>string</strong><br />event name</td></tr>
        				<tr>
-       				  <td>culture:</td>
-       				  <td><strong>string</strong><br />en-US (language-country)</td>
+       				  <td>room:</td>
+       				  <td><strong>string</strong><br />event's room</td>
        				</tr>
        				<tr>
-       				  <td>timeZone:</td>
-       				  <td><strong>string</strong><br />http://msdn.microsoft.com/en-us/library/gg154758.aspx)</td>
+       				  <td>calendarEventType:</td>
+       				  <td><strong>string</strong><br />a string reporting the event type (see the event types table)</td>
        				</tr>
                     <tr>
-       				  <td>measurementSystem:</td>
-       				  <td><strong>string</strong><br />Metric,UsStandard</td>
+       				  <td>calendarEventTypeId:</td>
+       				  <td><strong>string</strong><br />unique id for the event type</td>
+       				</tr>
+       				<tr>
+       				  <td>assignedTo:</td>
+       				  <td><strong>string</strong><br />id of the staff the event is assigned to</td>
+       				</tr>
+       				<tr>
+       				  <td>assignedToDescription:</td>
+       				  <td><strong>string</strong><br />name of the staff the event is assigned to</td>
+       				</tr>
+       				<tr>
+       				  <td>facilityId:</td>
+       				  <td><strong>string</strong><br />unique id of the facility</td>
+       				</tr>
+       				<tr>
+       				  <td>pictureUrl:</td>
+       				  <td><strong>string</strong><br />url to the event picture</td>
+       				</tr>
+       				<tr>
+       				  <td>recurrence:</td>
+       				  <td><strong>object</strong><br />object describing the event's recurrence</td>
        				</tr>
        				</tbody>
        			</table>
        		 <pre>
              {
                "data": {
-                   "userId": "1b939e3b-ae3c-e311-a8f9-00059a3c7800",
-                   "firstName": "Mario",
-                   "lastName": "Rossi",
-                   "nickName": "mRossi",
-                   "email": "mrossi@myemail.com",
-                   "birthDate": "1978-10-09",
-                   "gender": "M",
-                   "culture": "en-US",
-                   "pictureUrl": "https://cnd.mywellness.com//photo/437d9511-e57c-4e73-a4c8-480b7eee4df4.jpg",
-                   "timeZone": "GMT Standard Time",
-                   "measurementSystem": "Metric"
+                   "name": "Yoga",
+                   "room": "Yoga Room ",
+                   "calendarEventType": 1,
+                   "calendarEventTypeId": "fbcdd513-9382-4959-ba09-8102a84f1b88",
+                   "assignedTo": "9e13cbc3-eefa-4448-bbaf-de5c2974179c",
+                   "assignedToDescription": "Mario Rossi",
+                   "facilityId": "3df30a6f-6b24-4357-9898-f7dd3d32dbf8",
+                   "pictureUrl": "https://cnd.mywellness.com/photo/437d9511-e57c-4e73-a4c8-480b7eee4df4.jpg",
+                   "recurrence": {
+                   		"monday": true,
+                   		"tuesday": false,
+                   		"wednesday": true,
+                   		"thursday": false,
+                   		"friday": false,
+                   		"saturday" : false,
+                   		"sunday": false,
+                   		"startHour": 13,
+                   		"startMinutes": 00,
+                   		"endHour": 15,
+                   		"endMinutes": 30,
+                   		"startDate" : 20141201,
+                   		"endDate" : 20150510 
+                   }
                  },
                  "version": "1.0"
                 }
