@@ -15,6 +15,205 @@ title: Calendar
 	</div>
 </div>
 
+
+<div class="row line">
+       	<div class="desc-area col-md-10">
+       		<h3 id="profile">
+       			Search Calendar Events
+       		</h3>
+       		<p class="desc">
+                Retrieve the details for the event having the given ID.<br/>
+				<dl class="dl-horizontal">
+					<dt>Url:</dt>
+					<dd>https://services.mywellness.com/api/[version]/Facility/[FacilityId]/SearchCalendarEvents</dd>
+					<dt>HttpMethod:</dt>
+					<dd>POST</dd>
+				</dl>
+        	</p>
+			
+       		<div class="parameter">
+       		<h4>
+       			Parameters
+       		</h4>
+       		<table class="servicepar">
+       		     <tbody>
+       				<tr>
+       				  <td>date:</td>
+       				  <td><strong>int</strong> <em>required</em>  <br> the base date for search query </td>
+       				</tr>
+       				<tr>
+       				  <td>timeScope:</td>
+       				  <td><strong>string</strong> <em>required</em>  <br> set the time range for the query (see table below for available ranges) </td>
+       				</tr>
+       				<tr>
+       				  <td>staffMember:</td>
+       				  <td><strong>string</strong> <br> if specified filters the query by staff id </td>
+       				</tr>
+       				<tr>
+       				  <td>eventTypeId:</td>
+       				  <td><strong>string</strong> <br> if specified filters the query by event type id </td>
+       				</tr>
+       				<tr>
+       				  <td>roleId:</td>
+       				  <td><strong>string</strong> <br> if specified filters the query by role id </td>
+       				</tr>
+       				<tr>
+       				  <td>eventType:</td>
+       				  <td><strong>string</strong> <br> if specified filters the query by event type (see table below for defined types) </td>
+       				</tr>
+       				<tr>
+       				  <td>room:</td>
+       				  <td><strong>string</strong> <br> if specified filters the query by room name </td>
+       				</tr>
+       				<tr>
+       				  <td>dateStart:</td>
+       				  <td><strong>int</strong> <em>required when timeScope is set to Custom</em><br> start date for the search query</td>
+       				</tr>
+       				<tr>
+       				  <td>dateEnd:</td>
+       				  <td><strong>int</strong> <em>required when timeScope is set to Custom</em><br> end date for the search query</td>
+       				</tr>
+       				<tr>
+       				  <td>token:</td>
+       				  <td><strong>string</strong> <em>required</em>  <br> user access token </td>
+       				</tr>
+       			</tbody>
+       			</table>
+       		</div>
+			<pre>
+            { 
+              "token" :""
+              "date": 20140130,
+  			  "timeScope": "Week",
+  			  "staffMember": "1234cb2f-f5ef-4747-1234-1a568be842c3",
+  			  "eventTypeId": "7827cb2f-f366-4747-9724-1a879be842c4",
+  			  "roleId": "7827cb2f-f366-4747-9724-1a879be842c4",
+  			  "eventType": "Class",
+  			  "room": "StringValue"
+            }
+			</pre>
+			
+			<strong>Event types</strong>
+       			<table class="servicepar">
+       		  		<tbody>
+	       				<tr>
+	       				  <td>id: <strong>1</strong></td>
+	       				  <td>name: <strong>Class</strong></tr>
+       				</tbody>
+       			</table>
+
+       		<strong>Calendar Time Scopes</strong>
+       			<table class="servicepar">
+       		  		<tbody>
+	       				<tr>
+	       				  <td>id: <strong>0</strong></td>
+	       				  <td>name: <strong>Custom</strong></tr>
+	       				<tr>
+	       				  <td>id: <strong>1</strong></td>
+	       				  <td>name: <strong>Day</strong></td>
+	       				</tr>
+	       				<tr>
+	       				  <td>id: <strong>2</strong></td>
+	       				  <td>name: <strong>Week</strong></td>
+	       				</tr>
+	       				<tr>
+	       				  <td>id: <strong>3</strong></td>
+	       				  <td>name: <strong>Month</strong></td>
+	       				</tr>
+       				</tbody>
+       			</table>
+
+       		<div class="parameter">
+       		<h4>
+       			Response
+       		</h4>
+       		<table class="servicepar">
+       		  <tbody>
+       				<tr>
+       				  <td>name:</td>
+       				  <td><strong>string</strong><br />event name</td></tr>
+       				<tr>
+       				  <td>room:</td>
+       				  <td><strong>string</strong><br />event's room</td>
+       				</tr>
+       				<tr>
+       				  <td>calendarEventType:</td>
+       				  <td><strong>string</strong><br />a string reporting the event type (see the event types table)</td>
+       				</tr>
+                    <tr>
+       				  <td>calendarEventTypeId:</td>
+       				  <td><strong>string</strong><br />unique id for the event type</td>
+       				</tr>
+       				<tr>
+       				  <td>assignedTo:</td>
+       				  <td><strong>string</strong><br />id of the staff the event is assigned to</td>
+       				</tr>
+       				<tr>
+       				  <td>assignedToDescription:</td>
+       				  <td><strong>string</strong><br />name of the staff the event is assigned to</td>
+       				</tr>
+       				<tr>
+       				  <td>facilityId:</td>
+       				  <td><strong>string</strong><br />unique id of the facility</td>
+       				</tr>
+       				<tr>
+       				  <td>pictureUrl:</td>
+       				  <td><strong>string</strong><br />url to the event picture</td>
+       				</tr>
+       				<tr>
+       				  <td>recurrence:</td>
+       				  <td><strong>object</strong><br />object describing the event's recurrence</td>
+       				</tr>
+       				</tbody>
+       			</table>
+
+       			<strong>Event types</strong>
+       			<table class="servicepar">
+       		  		<tbody>
+	       				<tr>
+	       				  <td>id:</td>
+	       				  <td>1</tr>
+	       				<tr>
+	       				  <td>name:</td>
+	       				  <td>Class</td>
+	       				</tr>
+       				</tbody>
+       			</table>
+
+       		 <pre>
+             {
+               "data": {
+                   "name": "Yoga",
+                   "room": "Yoga Room ",
+                   "calendarEventType": 1,
+                   "calendarEventTypeId": "fbcdd513-9382-4959-ba09-8102a84f1b88",
+                   "assignedTo": "9e13cbc3-eefa-4448-bbaf-de5c2974179c",
+                   "assignedToDescription": "Mario Rossi",
+                   "facilityId": "3df30a6f-6b24-4357-9898-f7dd3d32dbf8",
+                   "pictureUrl": "https://cnd.mywellness.com/photo/437d9511-e57c-4e73-a4c8-480b7eee4df4.jpg",
+                   "recurrence": {
+                   		"monday": true,
+                   		"tuesday": false,
+                   		"wednesday": true,
+                   		"thursday": false,
+                   		"friday": false,
+                   		"saturday" : false,
+                   		"sunday": false,
+                   		"startHour": 13,
+                   		"startMinutes": 00,
+                   		"endHour": 15,
+                   		"endMinutes": 30,
+                   		"startDate" : 20141201,
+                   		"endDate" : 20150510 
+                   }
+                 },
+                 "version": "1.0"
+                }
+       		  </pre>
+       		</div>
+       	</div>
+</div> 
+
 <div class="row line">
        	<div class="desc-area col-md-10">
        		<h3 id="profile">
@@ -89,19 +288,6 @@ title: Calendar
        				  <td>recurrence:</td>
        				  <td><strong>object</strong><br />object describing the event's recurrence</td>
        				</tr>
-       				</tbody>
-       			</table>
-
-       			<strong>Event types</strong>
-       			<table class="servicepar">
-       		  		<tbody>
-	       				<tr>
-	       				  <td>id:</td>
-	       				  <td>1</tr>
-	       				<tr>
-	       				  <td>name:</td>
-	       				  <td>Class</td>
-	       				</tr>
        				</tbody>
        			</table>
 
