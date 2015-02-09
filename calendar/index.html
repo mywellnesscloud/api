@@ -1,0 +1,94 @@
+---
+layout: page
+title: Calendar 
+---
+
+<div class="row line">
+	<div class="desc-area col-md-10">
+		<h3 id="profile">
+			User
+		</h3>
+		<p class="desc">
+			Users are mywellness.com registered users that use technogym ecosystem tracking their activities, biometrics, manage theirs training program, challenges and training plan.
+			Resources available on a User are: Profile, Aspiration, ActivitySummary.
+		</p>
+	</div>
+</div>
+
+<div class="row line">
+       	<div class="desc-area col-md-10">
+       		<h3 id="profile">
+       			Details
+       		</h3>
+       		<p class="desc">
+                Retrieve the details for the event having the given ID.<br/>
+				<dl class="dl-horizontal">
+					<dt>Url:</dt>
+					<dd>https://services.mywellness.com/api/[version]/CalendarEvent/[EventId]/Details</dd>
+					<dt>HttpMethod:</dt>
+					<dd>POST</dd>
+				</dl>
+        	</p>
+			
+       		<div class="parameter">
+       		<h4>
+       			Parameters
+       		</h4>
+       		<table class="servicepar">
+       		     <tbody>
+       				<tr>
+       				  <td>token:</td>
+       				  <td><strong>string</strong> <em>required</em>  <br> user access token </td>
+       				</tr>
+       			</tbody>
+       			</table>
+       		</div>
+			<pre>
+            { 
+              "token" :""
+            }
+			</pre>
+       		<div class="parameter">
+       		<h4>
+       			Response
+       		</h4>
+       		<table class="servicepar">
+       		  <tbody>
+       				<tr>
+       				  <td>gender:</td>
+       				  <td><strong>string</strong><br />M or F</td></tr>
+       				<tr>
+       				  <td>culture:</td>
+       				  <td><strong>string</strong><br />en-US (language-country)</td>
+       				</tr>
+       				<tr>
+       				  <td>timeZone:</td>
+       				  <td><strong>string</strong><br />http://msdn.microsoft.com/en-us/library/gg154758.aspx)</td>
+       				</tr>
+                    <tr>
+       				  <td>measurementSystem:</td>
+       				  <td><strong>string</strong><br />Metric,UsStandard</td>
+       				</tr>
+       				</tbody>
+       			</table>
+       		 <pre>
+             {
+               "data": {
+                   "userId": "1b939e3b-ae3c-e311-a8f9-00059a3c7800",
+                   "firstName": "Mario",
+                   "lastName": "Rossi",
+                   "nickName": "mRossi",
+                   "email": "mrossi@myemail.com",
+                   "birthDate": "1978-10-09",
+                   "gender": "M",
+                   "culture": "en-US",
+                   "pictureUrl": "https://cnd.mywellness.com//photo/437d9511-e57c-4e73-a4c8-480b7eee4df4.jpg",
+                   "timeZone": "GMT Standard Time",
+                   "measurementSystem": "Metric"
+                 },
+                 "version": "1.0"
+                }
+       		  </pre>
+       		</div>
+       	</div>
+</div> 
