@@ -17,110 +17,341 @@ title: Appointment
 
 
 <div class="row line">
-       	<div class="desc-area col-md-10">
-       		<h3 id="setappointment">
-       			Set Appointment
-       		</h3>
-       		<p class="desc">
-                Schedule a meeting with a facility staff member. <br/>
-				<dl class="dl-horizontal">
-					<dt>Url:</dt>
-					<dd>https://services.mywellness.com/api/[version]/Facility/[FacilityId]/SetAppointment</dd>
-					<dt>HttpMethod:</dt>
-					<dd>POST</dd>
-				</dl>
-        	</p>
-			
-       		<div class="parameter">
-       		<h4>
-       			Parameters
-       		</h4>
-       		<table class="servicepar">
-       		     <tbody>
-       				<tr>
-       				  <td>token:</td>
-       				  <td><strong>string</strong> <em>required</em>  <br> user access token </td>
-       				</tr>
-       				<tr>
-       				  <td>name:</td>
-       				  <td><strong>string</strong> <em>required</em>  <br> meeting title </td>
-       				</tr>
-       				<tr>
-       				  <td>userId:</td>
-       				  <td><strong>string</strong> <em>required</em>  <br> user id </td>
-       				</tr>
-       				<tr>
-       				  <td>assignedTo:</td>
-       				  <td><strong>string</strong> <em>required</em>  <br> the staff the user wants to meet with </td>
-       				</tr>
-       				<tr>
-       				  <td>dueDate:</td>
-       				  <td><strong>date</strong> <em>required</em>  <br> the meeting date </td>
-       				</tr>
-       				<tr>
-       				  <td>startHourTime:</td>
-       				  <td><strong>int</strong> <em>required</em>  <br> the meeting start hour as integer value </td>
-       				</tr>
-       				<tr>
-       				  <td>startMinuteTime:</td>
-       				  <td><strong>int</strong> <em>required</em>  <br> the meeting start minute as integer value </td>
-       				</tr>
-       				<tr>
-       				  <td>endHourTime:</td>
-       				  <td><strong>int</strong> <em>required</em>  <br> the meeting end hour as integer value </td>
-       				</tr>
-       				<tr>
-       				  <td>endMinuteTime:</td>
-       				  <td><strong>int</strong> <em>required</em>  <br> the meeting end minute as integer value </td>
-       				</tr>
+   	<div class="desc-area col-md-10">
+   		<h3 id="setappointment">
+   			Set Appointment
+   		</h3>
+   		<p class="desc">
+            Schedule a meeting with a facility staff member. <br/>
+			<dl class="dl-horizontal">
+				<dt>Url:</dt>
+				<dd>https://services.mywellness.com/api/[version]/Facility/[FacilityId]/SetAppointment</dd>
+				<dt>HttpMethod:</dt>
+				<dd>POST</dd>
+			</dl>
+    	</p>
+		
+   		<div class="parameter">
+   		<h4>
+   			Parameters
+   		</h4>
+   		<table class="servicepar">
+   		     <tbody>
+   				<tr>
+   				  <td>token:</td>
+   				  <td><strong>string</strong> <em>required</em>  <br> user access token </td>
+   				</tr>
+   				<tr>
+   				  <td>name:</td>
+   				  <td><strong>string</strong> <em>required</em>  <br> meeting title </td>
+   				</tr>
+   				<tr>
+   				  <td>userId:</td>
+   				  <td><strong>string</strong> <em>required</em>  <br> user id </td>
+   				</tr>
+   				<tr>
+   				  <td>assignedTo:</td>
+   				  <td><strong>string</strong> <em>required</em>  <br> the staff the user wants to meet with </td>
+   				</tr>
+   				<tr>
+   				  <td>dueDate:</td>
+   				  <td><strong>date</strong> <em>required</em>  <br> the meeting date </td>
+   				</tr>
+   				<tr>
+   				  <td>startHourTime:</td>
+   				  <td><strong>int</strong> <em>required</em>  <br> the meeting start hour as integer value </td>
+   				</tr>
+   				<tr>
+   				  <td>startMinuteTime:</td>
+   				  <td><strong>int</strong> <em>required</em>  <br> the meeting start minute as integer value </td>
+   				</tr>
+   				<tr>
+   				  <td>endHourTime:</td>
+   				  <td><strong>int</strong> <em>required</em>  <br> the meeting end hour as integer value </td>
+   				</tr>
+   				<tr>
+   				  <td>endMinuteTime:</td>
+   				  <td><strong>int</strong> <em>required</em>  <br> the meeting end minute as integer value </td>
+   				</tr>
 
-       			</tbody>
-       			</table>
-       		</div>
-			<pre>
-            { 
-              "token" :"",
-              "name": "a sample meeting",
-              "userId": "27e7cbc8-14d0-4421-a2aa-892fec4f3050",
-              "assignedTo": "250d1c58-ea8c-47ac-aa20-10a8da89da66",
-              "dueDate": "2012-12-12 16:35:32 +01:00",
-              "startHourTime": 15,
-              "startMinuteTime": 30,
-              "endHourTime": 16,
-              "endMinuteTime": 0
+   			</tbody>
+   			</table>
+   		</div>
+		<pre>
+        { 
+          "token" :"",
+          "name": "a sample meeting",
+          "userId": "27e7cbc8-14d0-4421-a2aa-892fec4f3050",
+          "assignedTo": "250d1c58-ea8c-47ac-aa20-10a8da89da66",
+          "dueDate": "2012-12-12 16:35:32 +01:00",
+          "startHourTime": 15,
+          "startMinuteTime": 30,
+          "endHourTime": 16,
+          "endMinuteTime": 0
+        }
+		</pre>
+   		<div class="parameter">
+   		<h4>
+   			Response
+   		</h4>
+   		<table class="servicepar">
+   		  <tbody>
+   				<tr>
+   				  <td>appointment:</td>
+   				  <td><strong>object</strong><br />appointment details </td>
+   				</tr>
+   				</tbody>
+   			</table>
+   		 <pre>
+         {
+           "data": {
+               "appointment": {
+               		"appointmentId": "250d1c58-ea8c-47ac-aa20-10a8da89da66",
+               		"userId": "",
+               		"facilityId": "320d1c58-tg65-65dd-bn45-10a8qa89da98",
+               		"userFullName": "Marco Bianchi",
+               		"assignedToStaff": "250d1c58-bg2b-hn88-8j45-10a8da89da66",
+               		"assignedToStaffFullName": "Mario Rossi",
+               		"dueDate": "2012-12-12 16:35:32 +01:00",
+               		"endMinute": 0,
+               		"endHour": 16,
+               		"startMinute": 30,
+               		"startHour": 15
+               }
+             "version": "1.0"
             }
-			</pre>
-       		<div class="parameter">
-       		<h4>
-       			Response
-       		</h4>
-       		<table class="servicepar">
-       		  <tbody>
-       				<tr>
-       				  <td>appointment:</td>
-       				  <td><strong>object</strong><br />appointment details </td>
-       				</tr>
-       				</tbody>
-       			</table>
-       		 <pre>
-             {
-               "data": {
-                   "appointment": {
-                   		"appointmentId": "250d1c58-ea8c-47ac-aa20-10a8da89da66",
-                   		"userId": "",
-                   		"facilityId": "320d1c58-tg65-65dd-bn45-10a8qa89da98",
-                   		"userFullName": "Marco Bianchi",
-                   		"assignedToStaff": "250d1c58-bg2b-hn88-8j45-10a8da89da66",
-                   		"assignedToStaffFullName": "Mario Rossi",
-                   		"dueDate": "2012-12-12 16:35:32 +01:00",
-                   		"endMinute": 0,
-                   		"endHour": 16,
-                   		"startMinute": 30,
-                   		"startHour": 15
-                   }
-                 "version": "1.0"
-                }
-       		  </pre>
-       		</div>
-       	</div>
+   		  </pre>
+   		</div>
+   	</div>
+</div> 
+
+
+
+
+<div class="row line">
+   	<div class="desc-area col-md-10">
+   		<h3 id="details">
+   			Appointment Details
+   		</h3>
+   		<p class="desc">
+            Retrieve a previously scheduled meeting. <br/>
+			<dl class="dl-horizontal">
+				<dt>Url:</dt>
+				<dd>https://services.mywellness.com/api/[version]/Appointment/[AppointmentId]/Details</dd>
+				<dt>HttpMethod:</dt>
+				<dd>POST</dd>
+			</dl>
+    	</p>
+		
+   		<div class="parameter">
+   		<h4>
+   			Parameters
+   		</h4>
+   		<table class="servicepar">
+   		     <tbody>
+   				<tr>
+   				  <td>token:</td>
+   				  <td><strong>string</strong> <em>required</em>  <br> user access token </td>
+   				</tr>
+   			</tbody>
+   			</table>
+   		</div>
+		<pre>
+        { 
+          "token" :""
+        }
+		</pre>
+   		<div class="parameter">
+   		<h4>
+   			Response
+   		</h4>
+   		<table class="servicepar">
+   		  <tbody>
+   				<tr>
+   				  <td>appointment:</td>
+   				  <td><strong>object</strong><br />appointment details </td>
+   				</tr>
+   				</tbody>
+   			</table>
+   		 <pre>
+         {
+           "data": {
+               "appointment": {
+               		"appointmentId": "250d1c58-ea8c-47ac-aa20-10a8da89da66",
+               		"userId": "",
+               		"facilityId": "320d1c58-tg65-65dd-bn45-10a8qa89da98",
+               		"userFullName": "Marco Bianchi",
+               		"assignedToStaff": "250d1c58-bg2b-hn88-8j45-10a8da89da66",
+               		"assignedToStaffFullName": "Mario Rossi",
+               		"dueDate": "2012-12-12 16:35:32 +01:00",
+               		"endMinute": 0,
+               		"endHour": 16,
+               		"startMinute": 30,
+               		"startHour": 15
+               }
+             "version": "1.0"
+            }
+   		  </pre>
+   		</div>
+   	</div>
+</div>
+
+
+
+<div class="row line">
+   	<div class="desc-area col-md-10">
+   		<h3 id="delete">
+   			Delete Appointment
+   		</h3>
+   		<p class="desc">
+            Delete a previously scheduled meeting. <br/>
+			<dl class="dl-horizontal">
+				<dt>Url:</dt>
+				<dd>https://services.mywellness.com/api/[version]/Appointment/[AppointmentId]/Delete</dd>
+				<dt>HttpMethod:</dt>
+				<dd>POST</dd>
+			</dl>
+    	</p>
+		
+   		<div class="parameter">
+   		<h4>
+   			Parameters
+   		</h4>
+   		<table class="servicepar">
+   		     <tbody>
+   				<tr>
+   				  <td>token:</td>
+   				  <td><strong>string</strong> <em>required</em>  <br> user access token </td>
+   				</tr>
+   			</tbody>
+   			</table>
+   		</div>
+		<pre>
+        { 
+          "token" :"",
+          "name": "a sample meeting",
+          "userId": "27e7cbc8-14d0-4421-a2aa-892fec4f3050",
+          "assignedTo": "250d1c58-ea8c-47ac-aa20-10a8da89da66",
+          "dueDate": "2012-12-12 16:35:32 +01:00",
+          "startHourTime": 15,
+          "startMinuteTime": 30,
+          "endHourTime": 16,
+          "endMinuteTime": 0
+        }
+		</pre>
+   		<div class="parameter">
+   		<h4>
+   			Response
+   		</h4>
+   		<table class="servicepar">
+   		  <tbody>
+   				<tr>
+   				  <td>data:</td>
+   				  <td><strong>boolean</strong><br />result status </td>
+   				</tr>
+   				</tbody>
+   			</table>
+   		 <pre>
+   		 {
+           "data": true,
+           "version": "1.0"
+         }
+   		  </pre>
+   		</div>
+   	</div>
+</div>
+
+
+
+
+
+<div class="row line">
+   	<div class="desc-area col-md-10">
+   		<h3 id="update">
+   			Update Appointment
+   		</h3>
+   		<p class="desc">
+            Update a previously scheduled meeting. <br/>
+			<dl class="dl-horizontal">
+				<dt>Url:</dt>
+				<dd>https://services.mywellness.com/api/[version]/Appointment/[AppointmentId]/Update</dd>
+				<dt>HttpMethod:</dt>
+				<dd>POST</dd>
+			</dl>
+    	</p>
+		
+   		<div class="parameter">
+   		<h4>
+   			Parameters
+   		</h4>
+   		<table class="servicepar">
+   		     <tbody>
+   				<tr>
+   				  <td>token:</td>
+   				  <td><strong>string</strong> <em>required</em>  <br> user access token </td>
+   				</tr>
+   				<tr>
+   				  <td>appointmentId:</td>
+   				  <td><strong>string</strong> <em>required</em>  <br> appointment's ID </td>
+   				</tr>
+   				<tr>
+   				  <td>name:</td>
+   				  <td><strong>string</strong> <em>required</em>  <br> meeting title </td>
+   				</tr>
+   				<tr>
+   				  <td>userId:</td>
+   				  <td><strong>string</strong> <em>required</em>  <br> user id </td>
+   				</tr>
+   				<tr>
+   				  <td>assignedTo:</td>
+   				  <td><strong>string</strong> <em>required</em>  <br> the staff the user wants to meet with </td>
+   				</tr>
+   				<tr>
+   				  <td>dueDate:</td>
+   				  <td><strong>date</strong> <em>required</em>  <br> the meeting date </td>
+   				</tr>
+   				<tr>
+   				  <td>startHourTime:</td>
+   				  <td><strong>int</strong> <em>required</em>  <br> the meeting start hour as integer value </td>
+   				</tr>
+   				<tr>
+   				  <td>startMinuteTime:</td>
+   				  <td><strong>int</strong> <em>required</em>  <br> the meeting start minute as integer value </td>
+   				</tr>
+   				<tr>
+   				  <td>endHourTime:</td>
+   				  <td><strong>int</strong> <em>required</em>  <br> the meeting end hour as integer value </td>
+   				</tr>
+   				<tr>
+   				  <td>endMinuteTime:</td>
+   				  <td><strong>int</strong> <em>required</em>  <br> the meeting end minute as integer value </td>
+   				</tr>
+   			</tbody>
+   			</table>
+   		</div>
+		<pre>
+        { 
+          "token" :""
+        }
+		</pre>
+   		<div class="parameter">
+   		<h4>
+   			Response
+   		</h4>
+   		<table class="servicepar">
+   		  <tbody>
+   				<tr>
+   				  <td>data:</td>
+   				  <td><strong>boolean</strong><br />result status </td>
+   				</tr>
+   				</tbody>
+   			</table>
+   		 <pre>
+   		 {
+           "data": true,
+           "version": "1.0"
+         }
+   		  </pre>
+   		</div>
+   	</div>
 </div> 
