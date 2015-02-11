@@ -252,6 +252,165 @@ title: User
 		</div>
 	</div>      
 
+
+	<div class="row line">
+       	<div class="desc-area col-md-10">
+       		<h3 id="availability">
+       			Staff Availability
+       		</h3>
+       		<p class="desc">
+                Query the staff availabilities for the current facility.<br/>
+				<dl class="dl-horizontal">
+					<dt>Url:</dt>
+					<dd>https://services.mywellness.com/api/[version]/User/[userId]/StaffAvailabilities</dd>
+					<dt>HttpMethod:</dt>
+					<dd>POST</dd>
+				</dl>
+        	</p>
+			
+       		<div class="parameter">
+       		<h4>
+       			Parameters
+       		</h4>
+       		<table class="servicepar">
+       		     <tbody>
+       				<tr>
+       				  <td>token:</td>
+       				  <td><strong>string</strong> <em>required</em>  <br> user access token </td>
+       				</tr>
+       				<tr>
+       				  <td>startDate:</td>
+       				  <td><strong>int</strong> <em>required</em>  <br> start date for the current query </td>
+       				</tr>
+       				<tr>
+       				  <td>endDate:</td>
+       				  <td><strong>int</strong> <em>required</em>  <br> end date for the current query </td>
+       				</tr>
+       				<tr>
+       				  <td>facilityId:</td>
+       				  <td><strong>string</strong> <br> facility-id the staff are being searched in </td>
+       				</tr>
+       			</tbody>
+       			</table>
+       		</div>
+			<pre>
+            {
+            	"facilityId": "169c36a5-a28e-4605-9fa3-ae59360762bb",
+            	"startDate": 20140130,
+            	"endDate": 20140130,
+            	"token": ""
+            }
+			</pre>
+       		<div class="parameter">
+       		<h4>
+       			Response
+       		</h4>
+       		<table class="servicepar">
+       		  	<tbody>
+       				<tr>
+       				  <td>staffAvailabilities:</td>
+       				  <td><strong>object array</strong><br />array of availability definitions</td>
+       				</tr>
+       			</tbody>
+       		</table>
+
+       		 <pre>
+             {
+               "data": {
+                   "staffAvailabilities": {
+                   		"id": "3df30a6f-6b24-4357-9898-f7dd3d32dbf8",
+                   		"startHour": 14,
+                   		"startMinutes": 0,
+                   		"endHour": 18,
+                   		"endMinutes": 30,
+                   		"partitionDate": 20150110,
+                   		"startDate": 20150101,
+                   		"endDate": 20151231,
+                   		"staffId": "3df30a6f-6b24-4357-9898-f7dd3d32dbf8",
+                   		"roleId": "3df30a6f-6b24-4357-9898-f7dd3d32dbf8",
+                   		"assignedTo": "Mario Rossi",
+                   		"pictureUrl": "https://cnd.mywellness.com/photo/437d9511-e57c-4e73-a4c8-480b7eee4df4.jpg",
+                   		"gender": M,
+                   		"whoCanBook": "AllTrainerAndMember"
+                   }
+                 },
+                 "version": "1.0"
+                }
+       		  </pre>
+       		</div>
+       	</div>
+	</div>
+
+	<div class="row line">
+       	<div class="desc-area col-md-10">
+       		<h3 id="availability">
+       			User's facilities
+       		</h3>
+       		<p class="desc">
+                Retrieves the facilities the user can log in.<br/>
+				<dl class="dl-horizontal">
+					<dt>Url:</dt>
+					<dd>https://services.mywellness.com/api/[version]/User/[userId]/Facilities</dd>
+					<dt>HttpMethod:</dt>
+					<dd>POST</dd>
+				</dl>
+        	</p>
+			
+       		<div class="parameter">
+       		<h4>
+       			Parameters
+       		</h4>
+       		<table class="servicepar">
+       		     <tbody>
+       				<tr>
+       				  <td>token:</td>
+       				  <td><strong>string</strong> <em>required</em>  <br> user access token </td>
+       				</tr>
+       			</tbody>
+       			</table>
+       		</div>
+			<pre>
+            {
+            	"token": ""
+            }
+			</pre>
+       		<div class="parameter">
+       		<h4>
+       			Response
+       		</h4>
+       		<table class="servicepar">
+       		  	<tbody>
+       				<tr>
+       				  <td>facilities:</td>
+       				  <td><strong>object array</strong><br />array of facilities descriptions</td>
+       				</tr>
+       			</tbody>
+       		</table>
+
+       		 <pre>
+             {
+               "data": {
+                   "facilities": {
+                   		"id": "3df30a6f-6b24-4357-9898-f7dd3d32dbf8",
+                   		"name": "A Facility",
+                   		"address": "Via Calcinaro, 2861",
+                   		"city": "Cesena",
+                   		"zipcode": "47522",
+                   		"stateProvince": "IT",
+                   		"website": "https://www.mywellness.com",
+                   		"email": "myfacility@wellnesscenter.it",
+                   		"phoneNumber": "+391544991011",
+                   		"chainName": "Facilities chain",
+                   		"logoUrl": "https://cnd.mywellness.com/photo/437d9511-e57c-4e73-a4c8-480b7eee4df4.jpg"
+                   }
+                 },
+                 "version": "1.0"
+                }
+       		  </pre>
+       		</div>
+       	</div>
+	</div>
+
 <script>
 	$(function())
 	{
